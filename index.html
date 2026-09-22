@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AgileWell Corp</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
 
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center relative">
@@ -104,52 +103,110 @@
     <main class="max-w-7xl mx-auto px-4 py-8">
         
         <!-- ================= LANDING PAGE ================= -->
-        <section id="view-home" class="flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-8 py-10 fade-in">
+         <section id="view-home" class="flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-8 py-10 fade-in">
             <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl mb-4 shadow-xl shadow-indigo-500/30">
                 <i class="ph ph-buildings text-5xl text-white"></i>
             </div>
+            
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                AgileWell <span class="text-indigo-600">Enterprise</span>
+                AgileWell <span class="text-indigo-600">Corp</span>
             </h1>
+            
             <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                Plataforma de inteligência para gestão do Fator Humano em equipas de alta performance. 
-                Integre as práticas do PMBOK com abordagens ágeis.
+                Plataforma corporativa de inteligência para gestão do Fator Humano em equipas de alta performance. 
+                Integre as práticas estruturadas do PMBOK com a agilidade dos Sprints para monitorar o bem-estar e mitigar o esgotamento profissional.
             </p>
+
             <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
-                <button onclick="navigate('login')" class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all">
-                    Aceder à Plataforma
+                <button onclick="navigate('login')" class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all hover:scale-105">
+                    Aceder à Plataforma <i class="ph ph-arrow-right ml-1"></i>
                 </button>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 text-left w-full">
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
-                    <i class="ph ph-chart-bar text-3xl text-indigo-500 mb-3 block"></i>
-                    <h3 class="font-bold text-lg mb-2">Analytics de Squads</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Compare a saúde de múltiplas equipas em tempo real.</p>
-                </div>
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
-                    <i class="ph ph-warning-circle text-3xl text-rose-500 mb-3 block"></i>
-                    <h3 class="font-bold text-lg mb-2">Deteção de Burnout</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Algoritmos preditivos que alertam sobre riscos psicossociais.</p>
+
+            <!-- Explicação detalhada do funcionamento dos cards e do ecossistema do sistema -->
+            <div class="w-full text-left pt-12 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
+                        <i class="ph-fill ph-info text-indigo-500"></i> Como o Sistema Funciona?
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Conheça o fluxo operacional e o propósito analítico de cada módulo da plataforma:</p>
                 </div>
 
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-purple-200 dark:border-purple-900/50">
-                    <div class="flex items-center gap-2 mb-3">
-                        <i class="ph ph-book-open text-3xl text-purple-500"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Card 1: Check-in de Colaboradores -->
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                                    <i class="ph ph-user-check text-2xl"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">1. Check-in Diário de Fatores</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                Os desenvolvedores avaliam 16 fatores críticos divididos em 4 dimensões (Saúde & Bem-Estar, Dinâmica do Time, Trabalho & Entregas, e Visão Geral). Cada registro é confidencial e alimenta os algoritmos de saúde do projeto.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            Foco na Autonomia e Saúde do Dev
+                        </div>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Guia Prático Integrado</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Diretrizes completas para líderes e equipas, baseadas em diagnóstico, planeamento e execução.</p>
-                </div>
 
-                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-green-200 dark:border-green-900/50">
-                    <div class="flex items-center gap-2 mb-3">
-                        <i class="ph ph-robot text-3xl text-green-500"></i>
-                        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">NOVO</span>
+                    <!-- Card 2: Analytics para Gestores -->
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                                    <i class="ph ph-chart-bar text-2xl"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">2. Analytics de Squads & Risco</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                O painel de gestão centraliza métricas macro da organização. O sistema identifica pontos críticos em tempo real (como sobrecarga ou prazos excessivamente rígidos) e apresenta gráficos de evolução por ciclo de sprint.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-blue-600 dark:text-blue-400">
+                            Visão Geral e Preditiva de Gestão
+                        </div>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Agile Coach IA</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Inteligência Artificial que gera planos de ação customizados.</p>
+
+                    <!-- Card 3: Agile Coach IA -->
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                                    <i class="ph ph-robot text-2xl"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">3. Agile Coach IA (Planos de Ação)</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                Uma inteligência artificial integrada analiza o estado atual do time selecionado e gera recomendações táticas sob medida para o gestor aplicar de imediato, auxiliando na prevenção de burnout e melhoria do clima.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-purple-600 dark:text-purple-400">
+                            Recomendações Automatizadas por IA
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Guia Prático & Exportação PDF -->
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                                    <i class="ph ph-book-open text-2xl"></i>
+                                </div>
+                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">4. Guia Prático & Checklist</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                Repositório metodológico consolidado com as diretrizes da pesquisa (Diagnóstico, Planeamento Integrado, Execução e Checklist de Aplicação). Permite exportação completa em formato PDF para relatórios institucionais.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                            Fundamentação Teórica e Prática
+                        </div>
+                    </div>
+
                 </div>
-
-
             </div>
         </section>
 
@@ -446,4 +503,5 @@
         }
     }
 </script>
+<script src="bloqueio.js"></script>
 </html>
