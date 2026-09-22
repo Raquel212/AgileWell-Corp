@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center relative">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer z-10" onclick="navigate('home')">
+                <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
+                    <i class="ph ph-buildings text-xl"></i>
+                </div>
+                <h1 class="text-lg font-bold tracking-tight hidden sm:block">AgileWell <span class="text-indigo-600 dark:text-indigo-400 font-light">Corp</span></h1>
+            </div>
+
+            <!-- Menu Principal (Aparece Logado) -->
+            <nav id="topNavigation" class="hidden absolute left-1/2 -translate-x-1/2 items-center gap-6 bg-slate-100 dark:bg-slate-800 px-5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all duration-300">
+                <button onclick="navigate(currentRole === 'manager' ? 'manager' : 'dev')" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 hover:text-indigo-700 transition-colors">
+                    <i class="ph ph-squares-four text-lg"></i> Visão Geral
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
+                <button onclick="navigate('guide')" class="text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <i class="ph ph-book-open text-lg"></i> Guia Prático
+                </button>
+            </nav>
+
+            <!-- Ações à Direita -->
+            <div class="flex items-center gap-2 sm:gap-3 z-10">
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="themeIcon" class="ph ph-moon text-lg text-slate-600 dark:text-amber-400"></i>
+                </button>
+
+                <button id="loginHeaderBtn" onclick="navigate('login')" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-md">
+                    Entrar <i class="ph ph-sign-in"></i>
+                </button>
+                
+                <div id="loggedInActions" class="hidden items-center gap-2 sm:gap-4 relative">
+                    
+                    <!-- Notificações -->
+                    <div class="relative">
+                        <button id="notifBtn" onclick="toggleNotif()" class="relative p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                            <i class="ph ph-bell text-xl text-slate-600 dark:text-slate-300"></i>
+                            <span class="absolute top-1 right-1 flex h-2.5 w-2.5">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500 border-2 border-white dark:border-slate-900"></span>
+                            </span>
+                        </button>
+                        
+                        <div id="notifDropdown" class="hidden absolute top-12 right-[-60px] sm:right-0 w-[320px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+                            <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-white flex items-center gap-2">
+                                    <i class="ph-fill ph-bell text-indigo-500"></i> Notificações
+                                </h4>
+                            </div>
+                            <div class="max-h-80 overflow-y-auto">
+                                <div class="p-4 border-b border-slate-50 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-700/30 cursor-pointer flex gap-3 transition-colors bg-rose-50/30 dark:bg-rose-900/10">
+                                    <div class="mt-1 w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]"></div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-tight">Alerta Crítico: Squad Alpha</p>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">A carga de trabalho excedeu o limite sustentável nesta sprint.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
+
+                    <!-- Perfil -->
+                    <div class="relative">
+                        <button id="profileBtn" onclick="toggleProfile()" class="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm">
+                            <div id="userAvatar" class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-inner ring-2 ring-white dark:ring-slate-900">US</div>
+                            <div class="hidden sm:flex flex-col items-start">
+                                <span id="userNameHeader" class="text-sm font-bold text-slate-700 dark:text-slate-200 leading-none">Utilizador</span>
+                                <span id="userRoleHeader" class="text-[10px] font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mt-0.5">Perfil</span>
+                            </div>
+                            <i class="ph ph-caret-down text-xs text-slate-500 ml-1"></i>
+                        </button>
+                        
+                        <div id="profileDropdown" class="hidden absolute top-12 right-0 w-56 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+                            <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-700">
+                                <p id="dropdownName" class="text-sm font-bold text-slate-800 dark:text-white truncate">Nome</p>
+                                <p id="dropdownEmail" class="text-xs text-slate-500 truncate mt-0.5">email</p>
+                            </div>
+                            <div class="border-t border-slate-100 dark:border-slate-700 py-1.5 bg-rose-50/50 dark:bg-rose-900/10">
+                                <button onclick="logout()" class="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-900/30 text-left transition-colors">
+                                    <i class="ph ph-sign-out text-lg"></i> Terminar Sessão
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- ================= LANDING PAGE ================= -->
+        <section id="view-home" class="flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-8 py-10 fade-in">
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl mb-4 shadow-xl shadow-indigo-500/30">
+                <i class="ph ph-buildings text-5xl text-white"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                AgileWell <span class="text-indigo-600">Enterprise</span>
+            </h1>
+            <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                Plataforma de inteligência para gestão do Fator Humano em equipas de alta performance. 
+                Integre as práticas do PMBOK com abordagens ágeis.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
+                <button onclick="navigate('login')" class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all">
+                    Aceder à Plataforma
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 text-left w-full">
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <i class="ph ph-chart-bar text-3xl text-indigo-500 mb-3 block"></i>
+                    <h3 class="font-bold text-lg mb-2">Analytics de Squads</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Compare a saúde de múltiplas equipas em tempo real.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <i class="ph ph-warning-circle text-3xl text-rose-500 mb-3 block"></i>
+                    <h3 class="font-bold text-lg mb-2">Deteção de Burnout</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Algoritmos preditivos que alertam sobre riscos psicossociais.</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-purple-200 dark:border-purple-900/50">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="ph ph-book-open text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Guia Prático Integrado</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Diretrizes completas para líderes e equipas, baseadas em diagnóstico, planeamento e execução.</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-green-200 dark:border-green-900/50">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="ph ph-robot text-3xl text-green-500"></i>
+                        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">NOVO</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Agile Coach IA</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Inteligência Artificial que gera planos de ação customizados.</p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- ================= LOGIN PAGE ================= -->
+        <section id="view-login" class="hidden-section flex items-center justify-center px-4 fade-in py-10">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-8 w-full max-w-md space-y-6">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold">Acesso Corporativo</h2>
+                    <p class="text-slate-500 text-sm mt-1">Selecione o seu perfil de acesso</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+                    <button id="btnRoleManager" onclick="setLoginRole('manager')" class="py-2 rounded-md text-sm font-medium transition-all flex items-center justify-center gap-2 bg-white dark:bg-slate-600 shadow text-indigo-600 dark:text-white">
+                        <i class="ph ph-briefcase"></i> Gestão
+                    </button>
+                    <button id="btnRoleDev" onclick="setLoginRole('dev')" class="py-2 rounded-md text-sm font-medium transition-all flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400">
+                        <i class="ph ph-user"></i> Colaborador
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email Corporativo</label>
+                        <div class="relative mt-1">
+                            <i class="ph ph-envelope absolute left-3 top-3 text-slate-400"></i>
+                            <input type="email" id="loginEmail" placeholder="nome@empresa.com" class="block w-full pl-10 pr-3 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Palavra-passe</label>
+                        <div class="relative mt-1">
+                            <i class="ph ph-lock absolute left-3 top-3 text-slate-400"></i>
+                            <input type="password" placeholder="••••••••" class="block w-full pl-10 pr-3 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                    </div>
+                    <button onclick="handleLogin()" class="w-full py-3 mt-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all">
+                        Entrar no Sistema
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MANAGER DASHBOARD ================= -->
+        <section id="view-manager" class="hidden-section space-y-6 fade-in pb-20">
+            <!-- 1. Linha Superior: Resumo e Seletor -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Visão Geral -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 col-span-1 md:col-span-3 border-l-4 border-l-indigo-500">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="ph ph-buildings text-indigo-500"></i> Visão Geral da Organização
+                    </h2>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl text-center">
+                            <div class="text-3xl font-bold">3</div>
+                            <div class="text-xs text-slate-500 uppercase font-bold">Squads Ativas</div>
+                        </div>
+                        <div class="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl text-center border border-rose-100 dark:border-rose-900">
+                            <div class="text-3xl font-bold text-rose-600 dark:text-rose-400">1</div>
+                            <div class="text-xs text-rose-600/70 dark:text-rose-400 uppercase font-bold">Risco Alto</div>
+                        </div>
+                        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl text-center border border-emerald-100 dark:border-emerald-900">
+                            <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400">72%</div>
+                            <div class="text-xs text-emerald-600/70 dark:text-emerald-400 uppercase font-bold">Saúde Média</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Seletor de Equipa -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 col-span-1">
+                    <h3 class="font-bold mb-4 text-slate-700 dark:text-slate-200">Selecione a Equipa</h3>
+                    <div id="teamSelector" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <!-- 2. Linha Intermédia: Gráfico e Pontos Críticos -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Gráfico (Ocupa 2 colunas) -->
+                <div class="col-span-1 lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+                    <h3 id="chartTitle" class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <i class="ph ph-chart-line-up text-indigo-500"></i> Diagnóstico Histórico
+                    </h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="teamChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Pontos Críticos da Equipa Atual (Ocupa 1 coluna) -->
+                <div class="col-span-1 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 flex flex-col">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-rose-600 dark:text-rose-400">
+                        <i class="ph-fill ph-warning"></i> Pontos Críticos Atuais
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">O que mais incomoda a equipa selecionada neste momento, baseado nos 16 fatores analisados.</p>
+                    
+                    <div id="criticalFactorsContainer" class="flex-1 space-y-3">
+                        <!-- Injetado por JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Linha Inferior: IA Solutions Grid -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                    <div class="flex items-center gap-2">
+                        <i class="ph-fill ph-sparkle text-purple-500 text-2xl"></i>
+                        <div>
+                            <h2 class="text-xl font-bold">Planos de Ação Inteligentes</h2>
+                            <p class="text-sm text-slate-500">Gerados pelo Agile Coach IA com base nos pontos críticos.</p>
+                        </div>
+                    </div>
+                    <div id="aiButtonsContainer">
+                        <button onclick="generateManagerInsights()" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:scale-[1.02] active:scale-95 text-white shadow-lg shadow-purple-500/20 text-sm px-4 py-2 rounded-lg font-medium transition-all">
+                            <i class="ph ph-sparkle"></i> Gerar Soluções
+                        </button>
+                    </div>
+                </div>
+
+                <div id="managerSolutionsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Cards injetados via JS -->
+                    <div class="col-span-3 text-center py-10 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-dashed border-slate-200 dark:border-slate-700">
+                        <i class="ph ph-robot text-4xl text-slate-300 dark:text-slate-600 mb-2 block"></i>
+                        <p class="text-slate-500">Clique no botão acima para analisar a equipa e gerar estratégias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DEVELOPER DASHBOARD ================= -->
+        <section id="view-dev" class="hidden-section max-w-xl mx-auto pb-20 fade-in">
+            <div class="bg-indigo-600 text-white p-6 rounded-2xl mb-8 shadow-lg shadow-indigo-500/20 relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-xl font-bold">Olá, Colaborador!</h2>
+                        <span class="bg-white/20 px-2 py-1 rounded text-xs font-bold backdrop-blur-sm flex items-center gap-1">
+                            <i class="ph ph-users"></i> Squad Alpha
+                        </span>
+                    </div>
+                    <p class="opacity-90 text-sm mb-4">Os seus registos auxiliam na monitorização do Fator Humano e na adequação dos planeamentos ágeis.</p>
+                    <div id="devAiContainer">
+                        <button onclick="generateDevTip()" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors backdrop-blur-sm">
+                            <i class="ph ph-sparkle"></i> Pedir Conselho Empático à IA
+                        </button>
+                    </div>
+                </div>
+                <i class="ph-fill ph-robot absolute -right-4 -bottom-4 text-white/10 text-9xl rotate-12"></i>
+            </div>
+
+            <div class="text-center space-y-2 mb-6">
+                <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Check-in de Saúde e Trabalho</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Como os seguintes fatores impactaram a sua Sprint hoje?</p>
+            </div>
+
+            <div id="devFormContainer" class="space-y-4">
+                <!-- Gerado por JS baseado nas categorias -->
+            </div>
+
+            <button onclick="submitDevForm()" class="w-full py-4 text-lg mt-8 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-xl shadow-indigo-500/20 transition-all flex justify-center items-center gap-2">
+                Enviar Registos Confidenciais <i class="ph ph-check-circle"></i>
+            </button>
+        </section>
+
+        <!-- ================= GUIA PRÁTICO ================= -->
+        <section id="view-guide" class="hidden-section max-w-4xl mx-auto fade-in pb-20">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Guia Prático PMBOK + Ágil</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Diretrizes para integração focada no Fator Humano e Bem-estar.</p>
+                </div>
+                <button onclick="exportToPDF()" class="flex items-center gap-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 px-4 py-2 rounded-lg font-medium transition-colors shrink-0">
+                    <i class="ph ph-file-pdf text-xl"></i> Exportar PDF
+                </button>
+            </div>
+
+            <!-- Div que será exportada para PDF -->
+            <div id="pdfContent" class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-8 sm:p-10 space-y-8">
+                <div class="prose dark:prose-invert max-w-none">
+                    
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2">4. Diretrizes Preliminares para Integração PMBOK + Ágil</h1>
+                    <p class="text-justify mt-4 leading-relaxed">
+                        Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipas e na melhoria do desempenho dos projetos de software. A integração busca equilibrar previsibilidade e flexibilidade, considerando não apenas resultados técnicos, mas impactos humanos.
+                    </p>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.1 Planeamento Adaptativo com Limites Claros</h2>
+                    <p class="text-justify mt-2 leading-relaxed">
+                        O planeamento deve equilibrar flexibilidade e definição clara de objetivos, garantindo que a equipa saiba quais entregas são prioritárias e quais são os limites de escopo e recursos. A ausência de limites claros no planeamento é uma das principais causas de retrabalho e sobrecarga.
+                    </p>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.2 Gestão de Prazos Orientada à Capacidade da Equipa</h2>
+                    <p class="text-justify mt-2 leading-relaxed">
+                        Os prazos devem ser definidos considerando a capacidade real da equipa e o ritmo sustentável de trabalho. Prazos excessivamente rígidos podem aumentar o estresse e reduzir a produtividade.
+                    </p>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.3 Rituais Ágeis com Propósito</h2>
+                    <p class="text-justify mt-2 leading-relaxed">
+                        As cerimónias ágeis (daily meetings, planning, review e retrospectivas) devem ter objetivos claros e duração adequada. Reuniões sem propósito ou excessivamente longas podem gerar fadiga e perda de foco.
+                    </p>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.4 Comunicação Estruturada e Saudável</h2>
+                    <p class="text-justify mt-2 leading-relaxed">
+                        A comunicação deve ser transparente, mas respeitando limites claros de disponibilidade e evitando sobrecarga de informações. Promove segurança psicológica e confiança entre os membros.
+                    </p>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.5 Liderança Técnica e Empática</h2>
+                    <p class="text-justify mt-2 leading-relaxed">
+                        A liderança deve atuar como facilitadora, promovendo autonomia, segurança psicológica e apoio técnico. Líderes empáticos ajudam a reduzir conflitos e identificar sobrecarga.
+                    </p>
+
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">5. Guia Prático</h1>
+                    <p class="text-justify mt-4 leading-relaxed">
+                        Fornece instruções passo a passo para integrar os princípios, garantindo resultados consistentes.
+                    </p>
+                    
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.1 Etapa 1 — Diagnóstico do Contexto</h2>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                        <li>Identificação do público-alvo e stakeholders.</li>
+                        <li>Mapeamento da estrutura organizacional.</li>
+                        <li>Levantamento de processos e práticas existentes.</li>
+                        <li>Avaliação de capacidade da equipa e análise de riscos.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.2 Etapa 2 — Planeamento Integrado</h2>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                        <li>Definir objetivos do projeto e estruturar entregas incrementais.</li>
+                        <li>Estabelecer limites de escopo e prazo (evitar sobrecarga).</li>
+                        <li>Planear recursos e definir métricas de desempenho.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.3 Etapa 3 — Execução e Monitorização</h2>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                        <li>Implementar atividades planeadas e reuniões de alinhamento.</li>
+                        <li>Monitorizar métricas de bem-estar em tempo real.</li>
+                        <li>Promover liderança facilitadora e documentar lições.</li>
+                    </ul>
+
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">7. Checklist de Aplicação</h1>
+                    <p class="text-justify mt-4 leading-relaxed">
+                        O checklist atua como uma ferramenta prática para avaliar a implementação das diretrizes.
+                    </p>
+
+                    <div class="mt-6 space-y-4">
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">O escopo e os objetivos estão claramente definidos?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">A ausência de clareza gera retrabalho e desalinhamento.</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Metas excessivamente agressivas tendem a gerar pressão psicológica.</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As reuniões possuem propósito claro e duração adequada?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Reuniões redundantes aumentam a sensação de sobrecarga.</span>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">Há sinais de sobrecarga emocional ou cansaço recorrente?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Identifique fadiga mental e reavalie prazos imediatamente.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de Sucesso -->
+    <div id="successModal" class="hidden-section fixed inset-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm z-[60] flex flex-col items-center justify-center fade-in">
+        <i class="ph-fill ph-check-circle text-emerald-500 text-7xl mb-4 animate-bounce"></i>
+        <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Dados Registados!</h3>
+        <p class="text-slate-500 mt-2">Obrigado pela contribuição.</p>
+    </div>
+</body>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            }
+        }
+    }
+</script>
+</html>
