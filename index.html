@@ -103,149 +103,456 @@
     <main class="max-w-7xl mx-auto px-4 py-8">
         
         <!-- ================= LANDING PAGE ================= -->
-         <section id="view-home" class="flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-8 py-10 fade-in">
-            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl mb-4 shadow-xl shadow-indigo-500/30">
-                <i class="ph ph-buildings text-5xl text-white"></i>
+        <section id="view-home" class="flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto space-y-10 py-12 fade-in">
+
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-5 rounded-3xl shadow-xl shadow-indigo-500/30">
+                <i class="ph ph-buildings text-6xl text-white"></i>
             </div>
-            
+
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 AgileWell <span class="text-indigo-600">Corp</span>
             </h1>
-            
-            <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                Plataforma corporativa de inteligência para gestão do Fator Humano em equipas de alta performance. 
-                Integre as práticas estruturadas do PMBOK com a agilidade dos Sprints para monitorar o bem-estar e mitigar o esgotamento profissional.
+
+            <p class="text-xl text-slate-600 dark:text-slate-300 max-w-4xl leading-relaxed">
+                Plataforma corporativa de inteligência para gestão do Fator Humano em equipas de alta performance.
+                Integre as práticas estruturadas do PMBOK com a agilidade das metodologias ágeis para monitorar
+                indicadores de bem-estar, produtividade, colaboração e sustentabilidade organizacional,
+                reduzindo riscos de esgotamento profissional e promovendo ambientes de trabalho mais saudáveis.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
-                <button onclick="navigate('login')" class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all hover:scale-105">
-                    Aceder à Plataforma <i class="ph ph-arrow-right ml-1"></i>
+                <button onclick="navigate('login')"
+                    class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all hover:scale-105">
+                    Acessar à Plataforma <i class="ph ph-arrow-right ml-1"></i>
                 </button>
             </div>
 
-            <!-- Explicação detalhada do funcionamento dos cards e do ecossistema do sistema -->
-            <div class="w-full text-left pt-12 space-y-6">
-                <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
-                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
-                        <i class="ph-fill ph-info text-indigo-500"></i> Como o Sistema Funciona?
+            <!-- FUNCIONAMENTO -->
+            <div class="w-full text-left pt-16 space-y-8">
+
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-white flex items-center gap-3">
+                        <i class="ph-fill ph-info text-indigo-500"></i>
+                        Como o Sistema Funciona?
                     </h2>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Conheça o fluxo operacional e o propósito analítico de cada módulo da plataforma:</p>
+
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">
+                        Conheça os principais módulos da plataforma e como eles ajudam gestores e equipas a
+                        monitorar o fator humano durante o ciclo de desenvolvimento de software.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <!-- Card 1: Check-in de Colaboradores -->
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <!-- CARD 1 -->
+                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
+
                         <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
-                                    <i class="ph ph-user-check text-2xl"></i>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                                    <i class="ph ph-user-check text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">1. Check-in Diário de Fatores</h3>
+
+                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
+                                    1. Check-in Diário de Fatores
+                                </h3>
                             </div>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                Os desenvolvedores avaliam 16 fatores críticos divididos em 4 dimensões (Saúde & Bem-Estar, Dinâmica do Time, Trabalho & Entregas, e Visão Geral). Cada registro é confidencial e alimenta os algoritmos de saúde do projeto.
+
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+                                Os colaboradores realizam avaliações periódicas de 16 fatores distribuídos entre
+                                Saúde & Bem-Estar, Dinâmica do Time, Trabalho & Entregas e Visão Geral do Projeto.
+                                Os dados são tratados de forma confidencial e transformados em indicadores que
+                                permitem identificar tendências relacionadas à motivação, fadiga, pressão
+                                psicológica, comunicação, autonomia e satisfação da equipa.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                            Foco na Autonomia e Saúde do Dev
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            Foco na Autonomia, Saúde e Qualidade de Vida
                         </div>
+
                     </div>
 
-                    <!-- Card 2: Analytics para Gestores -->
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                    <!-- CARD 2 -->
+                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
+
                         <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                                    <i class="ph ph-chart-bar text-2xl"></i>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                                    <i class="ph ph-chart-bar text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">2. Analytics de Squads & Risco</h3>
+
+                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
+                                    2. Analytics de Squads & Risco
+                                </h3>
                             </div>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                O painel de gestão centraliza métricas macro da organização. O sistema identifica pontos críticos em tempo real (como sobrecarga ou prazos excessivamente rígidos) e apresenta gráficos de evolução por ciclo de sprint.
+
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+                                O painel executivo consolida informações estratégicas da organização,
+                                apresentando indicadores de saúde das equipas, tendências de evolução,
+                                níveis de risco, padrões de comportamento e alertas preventivos.
+                                Gestores conseguem acompanhar a evolução dos squads ao longo das sprints
+                                e identificar rapidamente situações críticas.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-blue-600 dark:text-blue-400">
-                            Visão Geral e Preditiva de Gestão
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-400">
+                            Gestão Baseada em Dados e Evidências
                         </div>
+
                     </div>
 
-                    <!-- Card 3: Agile Coach IA -->
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                    <!-- CARD 3 -->
+                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
+
                         <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                                    <i class="ph ph-robot text-2xl"></i>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                                    <i class="ph ph-robot text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">3. Agile Coach IA (Planos de Ação)</h3>
+
+                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
+                                    3. Agile Coach IA
+                                </h3>
                             </div>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                Uma inteligência artificial integrada analiza o estado atual do time selecionado e gera recomendações táticas sob medida para o gestor aplicar de imediato, auxiliando na prevenção de burnout e melhoria do clima.
+
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+                                O módulo de Inteligência Artificial interpreta os indicadores do time
+                                e gera recomendações práticas para líderes, Scrum Masters, Product Owners
+                                e gestores. As sugestões incluem ações para melhorar comunicação,
+                                colaboração, equilíbrio da carga de trabalho, engajamento e prevenção
+                                de burnout.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-purple-600 dark:text-purple-400">
-                            Recomendações Automatizadas por IA
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-purple-600 dark:text-purple-400">
+                            Recomendações Inteligentes e Automatizadas
                         </div>
+
                     </div>
 
-                    <!-- Card 4: Guia Prático & Exportação PDF -->
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                    <!-- CARD 4 -->
+                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
+
                         <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
-                                    <i class="ph ph-book-open text-2xl"></i>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                                    <i class="ph ph-book-open text-3xl"></i>
                                 </div>
-                                <h3 class="font-bold text-lg text-slate-800 dark:text-white">4. Guia Prático & Checklist</h3>
+
+                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
+                                    4. Guia Prático & Checklist
+                                </h3>
                             </div>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                Repositório metodológico consolidado com as diretrizes da pesquisa (Diagnóstico, Planeamento Integrado, Execução e Checklist de Aplicação). Permite exportação completa em formato PDF para relatórios institucionais.
+
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+                                Disponibiliza o guia desenvolvido a partir da pesquisa científica,
+                                reunindo boas práticas para diagnóstico, planeamento integrado,
+                                execução, monitorização contínua e avaliação dos fatores humanos.
+                                Os gestores podem exportar relatórios e checklists em PDF para
+                                documentação institucional.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-50 dark:border-slate-700/50 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                            Fundamentação Teórica e Prática
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                            Fundamentação Científica e Aplicação Prática
                         </div>
+
                     </div>
 
                 </div>
+
+                <!-- COMO UTILIZAR -->
+                <div class="pt-16">
+
+                    <h2 class="text-3xl font-bold text-center text-slate-800 dark:text-white mb-10">
+                        Como Utilizar a Plataforma
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+                            <div class="text-4xl font-bold text-indigo-600 mb-4">1</div>
+                            <h3 class="font-semibold mb-2">Cadastrar</h3>
+                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
+                                Registe a organização, equipas e responsáveis pelo acompanhamento.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+                            <div class="text-4xl font-bold text-blue-600 mb-4">2</div>
+                            <h3 class="font-semibold mb-2">Avaliar</h3>
+                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
+                                Os colaboradores respondem avaliações rápidas sobre fatores humanos.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+                            <div class="text-4xl font-bold text-purple-600 mb-4">3</div>
+                            <h3 class="font-semibold mb-2">Monitorar</h3>
+                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
+                                Os dashboards consolidam indicadores e identificam riscos.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+                            <div class="text-4xl font-bold text-emerald-600 mb-4">4</div>
+                            <h3 class="font-semibold mb-2">Agir</h3>
+                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
+                                Utilize recomendações da IA e do guia para melhorar continuamente o ambiente de trabalho.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BENEFÍCIOS -->
+                <div class="pt-16">
+
+                    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-10 text-white">
+
+                        <h2 class="text-3xl font-bold mb-6">
+                            Benefícios da AgileWell Corp
+                        </h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+
+                            <div>
+                                <h3 class="font-bold mb-2">Redução de Burnout</h3>
+                                <p class="text-indigo-100 text-sm">
+                                    Identificação precoce de sinais de sobrecarga física e emocional.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold mb-2">Maior Produtividade</h3>
+                                <p class="text-indigo-100 text-sm">
+                                    Equipas mais saudáveis produzem melhor e de forma sustentável.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold mb-2">Decisões Inteligentes</h3>
+                                <p class="text-indigo-100 text-sm">
+                                    Dados, métricas e IA para apoiar a liderança organizacional.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
 
         <!-- ================= LOGIN PAGE ================= -->
-        <section id="view-login" class="hidden-section flex items-center justify-center px-4 fade-in py-10">
-            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-8 w-full max-w-md space-y-6">
-                <div class="text-center">
-                    <h2 class="text-2xl font-bold">Acesso Corporativo</h2>
-                    <p class="text-slate-500 text-sm mt-1">Selecione o seu perfil de acesso</p>
-                </div>
-                <div class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
-                    <button id="btnRoleManager" onclick="setLoginRole('manager')" class="py-2 rounded-md text-sm font-medium transition-all flex items-center justify-center gap-2 bg-white dark:bg-slate-600 shadow text-indigo-600 dark:text-white">
-                        <i class="ph ph-briefcase"></i> Gestão
-                    </button>
-                    <button id="btnRoleDev" onclick="setLoginRole('dev')" class="py-2 rounded-md text-sm font-medium transition-all flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400">
-                        <i class="ph ph-user"></i> Colaborador
-                    </button>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email Corporativo</label>
-                        <div class="relative mt-1">
-                            <i class="ph ph-envelope absolute left-3 top-3 text-slate-400"></i>
-                            <input type="email" id="loginEmail" placeholder="nome@empresa.com" class="block w-full pl-10 pr-3 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+        <section id="view-login" class="hidden-section min-h-[80vh] flex items-center justify-center py-6 fade-in">
+            <div class="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- LADO ESQUERDO: Informações Institucionais da Dissertação -->
+                <div class="hidden lg:block">
+                    <div class="mb-8">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm font-medium">
+                            <i class="ph ph-shield-check"></i> Plataforma Corporativa Híbrida
+                        </span>
+
+                        <h1 class="text-4xl xl:text-5xl font-extrabold mt-6 text-slate-900 dark:text-white tracking-tight">
+                            Gestão Inteligente do
+                            <span class="text-indigo-600 dark:text-indigo-400">Fator Humano</span>
+                        </h1>
+
+                        <p class="mt-5 text-base text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                            Monitore o bem-estar das equipas, acompanhe indicadores organizacionais, receba recomendações baseadas em Inteligência Artificial e implemente melhorias contínuas utilizando práticas ágeis e PMBOK.
+                        </p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 shrink-0 mt-1">
+                                <i class="ph ph-buildings text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white text-base">Cadastre Organizações</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Registe empresas, departamentos, equipas e responsáveis pelo acompanhamento.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 mt-1">
+                                <i class="ph ph-users-three text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white text-base">Monitorize Equipas</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Acompanhe indicadores de saúde organizacional, motivação e produtividade.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0 mt-1">
+                                <i class="ph ph-robot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white text-base">Receba Recomendações (IA)</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Utilize análises avançadas e IA para mitigar esgotamento e apoiar decisões.</p>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Palavra-passe</label>
-                        <div class="relative mt-1">
-                            <i class="ph ph-lock absolute left-3 top-3 text-slate-400"></i>
-                            <input type="password" placeholder="••••••••" class="block w-full pl-10 pr-3 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+
+                <!-- LADO DIREITO: Formulário de Acesso e Registo -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700 p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white mb-3 shadow-md shadow-indigo-500/20">
+                            <i id="authIconHeader" class="ph ph-buildings text-2xl"></i>
+                        </div>
+                        <h2 id="authTitle" class="text-2xl font-bold text-slate-900 dark:text-white">Acesso Corporativo</h2>
+                        <p id="authSubtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Selecione o seu perfil de acesso</p>
+                    </div>
+
+                    <!-- Seletor de Perfil (Apenas visível no Modo Login) -->
+                    <div id="roleSelectorContainer" class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-700 p-1 rounded-xl mb-6">
+                        <button id="btnRoleManager" onclick="setLoginRole('manager')" class="py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 bg-white dark:bg-slate-600 shadow text-indigo-600 dark:text-white">
+                            <i class="ph ph-briefcase"></i> Gestão
+                        </button>
+                        <button id="btnRoleDev" onclick="setLoginRole('dev')" class="py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400">
+                            <i class="ph ph-user"></i> Colaborador
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Campos exclusivos de CADASTRO DE ORGANIZAÇÃO -->
+                        <div id="registerFieldsContainer" class="hidden space-y-4">
+                            <div>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome da Organização / Empresa</label>
+                                <div class="relative mt-1">
+                                    <i class="ph ph-buildings absolute left-3 top-3.5 text-slate-400"></i>
+                                    <input type="text" id="regCompanyName" placeholder="Ex: AgileTech Corp" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">CNPJ</label>
+                                <div class="relative mt-1">
+                                    <i class="ph ph-identification-card absolute left-3 top-3.5 text-slate-400"></i>
+                                    <input type="text" id="regCnpj" placeholder="00.000.000/0001-00" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email (comum para ambos, mas com ID específico no cadastro se necessário) -->
+                        <div>
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email Corporativo</label>
+                            <div class="relative mt-1">
+                                <i class="ph ph-envelope absolute left-3 top-3.5 text-slate-400"></i>
+                                <input type="email" id="loginEmail" placeholder="nome@empresa.com" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Senha de Login -->
+                        <div id="passwordFieldContainer">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Palavra-passe</label>
+                            <div class="relative mt-1">
+                                <i class="ph ph-lock absolute left-3 top-3.5 text-slate-400"></i>
+                                <input type="password" id="loginPassword" placeholder="••••••••" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Campos de Confirmação de Senha e Nova Senha para Cadastro -->
+                        <div id="registerPasswordFields" class="hidden space-y-4">
+                            <div>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Cadastrar Palavra-passe</label>
+                                <div class="relative mt-1">
+                                    <i class="ph ph-lock absolute left-3 top-3 text-slate-400"></i>
+
+                                    <input
+                                        id="loginPassword"
+                                        type="password"
+                                        placeholder="••••••••"
+                                        class="block w-full pl-10 pr-12 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+
+                                    <button
+                                        type="button"
+                                        onclick="togglePassword('loginPassword', this)"
+                                        class="absolute right-3 top-3 text-slate-400 hover:text-indigo-600">
+
+                                        <i class="ph ph-eye"></i>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Confirmar Palavra-passe</label>
+                                <div class="relative">
+
+                                    <input
+                                        id="regConfirmPassword"
+                                        type="password"
+                                        class="block w-full pl-4 pr-12 py-3 ...">
+
+                                    <button
+                                        type="button"
+                                        onclick="togglePassword('regConfirmPassword', this)"
+                                        class="absolute right-3 top-3 text-slate-400">
+
+                                        <i class="ph ph-eye"></i>
+
+                                    </button>
+
+                                </div>
+                        </div>
+
+                        <button id="authSubmitBtn" onclick="handleAuthSubmit()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium shadow-md transition-all hover:scale-[1.01]">
+                            <span id="loginBtnText">Entrar no Sistema</span>
+                        </button>
+
+                        <div class="text-center pt-2">
+                            <button onclick="toggleRegisterMode()" id="toggleRegBtn" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                                Não tem organização registada? Clique aqui para cadastrar
+                            </button>
                         </div>
                     </div>
-                    <button onclick="handleLogin()" class="w-full py-3 mt-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all">
-                        Entrar no Sistema
-                    </button>
                 </div>
+
             </div>
         </section>
+
+        <!-- FOOTER -->
+        <footer class="pt-16 border-t border-slate-200 dark:border-slate-800">
+
+            <div class="text-center space-y-4">
+
+                <h3 class="text-2xl font-bold text-slate-800 dark:text-white">
+                    AgileWell Corp
+                </h3>
+
+                <p class="max-w-4xl mx-auto text-slate-500 dark:text-slate-400 text-center">
+                    Solução corporativa orientada à integração entre PMBOK, metodologias ágeis,
+                    análise de dados e Inteligência Artificial para monitorização do fator humano
+                    em equipas de desenvolvimento de software.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                    <span>PMBOK</span>
+                    <span>•</span>
+                    <span>Metodologias Ágeis</span>
+                    <span>•</span>
+                    <span>Fator Humano</span>
+                    <span>•</span>
+                    <span>Analytics</span>
+                    <span>•</span>
+                    <span>IA</span>
+                </div>
+
+                <p class="text-xs text-slate-400 pt-4">
+                    © 2026 AgileWell Corp. Todos os direitos reservados.
+                </p>
+
+            </div>
+
+        </footer>
 
         <!-- ================= MANAGER DASHBOARD ================= -->
         <section id="view-manager" class="hidden-section space-y-6 fade-in pb-20">
