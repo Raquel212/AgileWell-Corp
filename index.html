@@ -354,7 +354,7 @@
         <section id="view-login" class="hidden-section min-h-[80vh] flex items-center justify-center py-6 fade-in">
             <div class="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
 
-                <!-- LADO ESQUERDO: Informações Institucionais da Dissertação -->
+                <!-- LADO ESQUERDO: Informações Institucionais -->
                 <div class="hidden lg:block">
                     <div class="mb-8">
                         <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm font-medium">
@@ -404,14 +404,14 @@
                     </div>
                 </div>
 
-                <!-- LADO DIREITO: Formulário de Acesso e Registo -->
+                <!-- LADO DIREITO: Formulário de Acesso e Registo de Organização (Gestor) -->
                 <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700 p-8">
                     <div class="text-center mb-6">
                         <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white mb-3 shadow-md shadow-indigo-500/20">
                             <i id="authIconHeader" class="ph ph-buildings text-2xl"></i>
                         </div>
                         <h2 id="authTitle" class="text-2xl font-bold text-slate-900 dark:text-white">Acesso Corporativo</h2>
-                        <p id="authSubtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Selecione o seu perfil de acesso</p>
+                        <p id="authSubtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Selecione o seu perfil de acesso ou registe a empresa</p>
                     </div>
 
                     <!-- Seletor de Perfil (Apenas visível no Modo Login) -->
@@ -425,17 +425,24 @@
                     </div>
 
                     <div class="space-y-4">
-                        <!-- Campos exclusivos de CADASTRO DE ORGANIZAÇÃO -->
+                        <!-- Campos exclusivos de CADASTRO DE EMPRESA (Gestor) -->
                         <div id="registerFieldsContainer" class="hidden space-y-4">
                             <div>
-                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome da Organização / Empresa</label>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome do Gestor / Responsável</label>
+                                <div class="relative mt-1">
+                                    <i class="ph ph-user absolute left-3 top-3.5 text-slate-400"></i>
+                                    <input type="text" id="regName" placeholder="Ex: Ana Gestora" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome da Empresa</label>
                                 <div class="relative mt-1">
                                     <i class="ph ph-buildings absolute left-3 top-3.5 text-slate-400"></i>
                                     <input type="text" id="regCompanyName" placeholder="Ex: AgileTech Corp" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
                                 </div>
                             </div>
                             <div>
-                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">CNPJ</label>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">CNPJ da Empresa</label>
                                 <div class="relative mt-1">
                                     <i class="ph ph-identification-card absolute left-3 top-3.5 text-slate-400"></i>
                                     <input type="text" id="regCnpj" placeholder="00.000.000/0001-00" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
@@ -443,66 +450,49 @@
                             </div>
                         </div>
 
-                        <!-- Email (comum para ambos, mas com ID específico no cadastro se necessário) -->
+                        <!-- Email de Login/Cadastro -->
                         <div>
-                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email Corporativo</label>
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">E-mail Corporativo</label>
                             <div class="relative mt-1">
                                 <i class="ph ph-envelope absolute left-3 top-3.5 text-slate-400"></i>
                                 <input type="email" id="loginEmail" placeholder="nome@empresa.com" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
                             </div>
                         </div>
 
-                        <!-- Senha de Login -->
+                        <!-- Senha de Login Simples com Olhinho -->
                         <div id="passwordFieldContainer">
-                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Palavra-passe</label>
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Palavra-passe / Senha</label>
                             <div class="relative mt-1">
                                 <i class="ph ph-lock absolute left-3 top-3.5 text-slate-400"></i>
-                                <input type="password" id="loginPassword" placeholder="••••••••" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                <input type="password" id="loginPassword" placeholder="••••••••" class="block w-full pl-10 pr-10 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                <button type="button" onclick="togglePasswordVisibility('loginPassword', 'eyeIconLogin')" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                                    <i id="eyeIconLogin" class="ph ph-eye text-lg"></i>
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Campos de Confirmação de Senha e Nova Senha para Cadastro -->
+                        <!-- Campos de Criação e Confirmação de Senha para Cadastro (com Olhinho) -->
                         <div id="registerPasswordFields" class="hidden space-y-4">
                             <div>
-                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Cadastrar Palavra-passe</label>
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Criar Senha</label>
                                 <div class="relative mt-1">
-                                    <i class="ph ph-lock absolute left-3 top-3 text-slate-400"></i>
-
-                                    <input
-                                        id="loginPassword"
-                                        type="password"
-                                        placeholder="••••••••"
-                                        class="block w-full pl-10 pr-12 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
-
-                                    <button
-                                        type="button"
-                                        onclick="togglePassword('loginPassword', this)"
-                                        class="absolute right-3 top-3 text-slate-400 hover:text-indigo-600">
-
-                                        <i class="ph ph-eye"></i>
-
+                                    <i class="ph ph-lock absolute left-3 top-3.5 text-slate-400"></i>
+                                    <input type="password" id="regPassword" placeholder="••••••••" class="block w-full pl-10 pr-10 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                    <button type="button" onclick="togglePasswordVisibility('regPassword', 'eyeIconReg1')" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                                        <i id="eyeIconReg1" class="ph ph-eye text-lg"></i>
                                     </button>
                                 </div>
                             </div>
                             <div>
-                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Confirmar Palavra-passe</label>
-                                <div class="relative">
-
-                                    <input
-                                        id="regConfirmPassword"
-                                        type="password"
-                                        class="block w-full pl-4 pr-12 py-3 ...">
-
-                                    <button
-                                        type="button"
-                                        onclick="togglePassword('regConfirmPassword', this)"
-                                        class="absolute right-3 top-3 text-slate-400">
-
-                                        <i class="ph ph-eye"></i>
-
+                                <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Confirmar Senha</label>
+                                <div class="relative mt-1">
+                                    <i class="ph ph-lock-key absolute left-3 top-3.5 text-slate-400"></i>
+                                    <input type="password" id="regConfirmPassword" placeholder="••••••••" class="block w-full pl-10 pr-10 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                                    <button type="button" onclick="togglePasswordVisibility('regConfirmPassword', 'eyeIconReg2')" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                                        <i id="eyeIconReg2" class="ph ph-eye text-lg"></i>
                                     </button>
-
                                 </div>
+                            </div>
                         </div>
 
                         <button id="authSubmitBtn" onclick="handleAuthSubmit()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium shadow-md transition-all hover:scale-[1.01]">
@@ -511,7 +501,7 @@
 
                         <div class="text-center pt-2">
                             <button onclick="toggleRegisterMode()" id="toggleRegBtn" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-                                Não tem organização registada? Clique aqui para cadastrar
+                                É gestor e quer cadastrar a empresa? Clique aqui
                             </button>
                         </div>
                     </div>
@@ -519,6 +509,7 @@
 
             </div>
         </section>
+
 
         <!-- FOOTER -->
         <footer class="pt-16 border-t border-slate-200 dark:border-slate-800">
@@ -555,12 +546,54 @@
 
         </footer>
 
+        <!-- ================= HOME / LANDING PAGE ================= -->
+        <section id="view-home" class="hidden-section flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto space-y-8 py-10 fade-in">
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl mb-2 shadow-xl shadow-indigo-500/30">
+                <i class="ph ph-buildings text-5xl text-white"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                AgileWell <span class="text-indigo-600">Enterprise</span>
+            </h1>
+            
+            <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                Plataforma de inteligência para gestão do Fator Humano em equipas de alta performance. 
+                Integre as práticas do PMBOK com abordagens ágeis para proteger a saúde das equipas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
+                <button onclick="navigate('login')" class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium shadow-lg shadow-indigo-500/20 transition-all">
+                    Aceder à Plataforma
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 text-left w-full">
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <i class="ph ph-chart-bar text-3xl text-indigo-500 mb-3 block"></i>
+                    <h3 class="font-bold text-lg mb-2">Analytics de Squads</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Compare a saúde de múltiplas equipas em tempo real com gráficos consolidados.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <i class="ph ph-warning-circle text-3xl text-rose-500 mb-3 block"></i>
+                    <h3 class="font-bold text-lg mb-2">Deteção de Burnout</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Algoritmos preditivos baseados em 16 fatores que alertam sobre riscos psicossociais.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-purple-200 dark:border-purple-900/50">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="ph ph-robot text-3xl text-purple-500"></i>
+                        <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-full">IA</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Agile Coach IA</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Inteligência Artificial que gera planos de ação customizados para cada gestor.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- ================= MANAGER DASHBOARD ================= -->
-        <section id="view-manager" class="hidden-section space-y-6 fade-in pb-20">
-            <!-- 1. Linha Superior: Resumo e Seletor -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <section id="view-manager" class="hidden-section space-y-8 fade-in pb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Visão Geral -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 col-span-1 md:col-span-3 border-l-4 border-l-indigo-500">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 col-span-1 md:col-span-2 border-l-4 border-l-indigo-500">
                     <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
                         <i class="ph ph-buildings text-indigo-500"></i> Visão Geral da Organização
                     </h2>
@@ -580,60 +613,51 @@
                     </div>
                 </div>
                 <!-- Seletor de Equipa -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 col-span-1">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
                     <h3 class="font-bold mb-4 text-slate-700 dark:text-slate-200">Selecione a Equipa</h3>
                     <div id="teamSelector" class="space-y-2"></div>
                 </div>
             </div>
 
-            <!-- 2. Linha Intermédia: Gráfico e Pontos Críticos -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Gráfico (Ocupa 2 colunas) -->
-                <div class="col-span-1 lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
-                    <h3 id="chartTitle" class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <i class="ph ph-chart-line-up text-indigo-500"></i> Diagnóstico Histórico
-                    </h3>
-                    <div class="relative h-64 w-full">
-                        <canvas id="teamChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Pontos Críticos da Equipa Atual (Ocupa 1 coluna) -->
-                <div class="col-span-1 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 flex flex-col">
-                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-rose-600 dark:text-rose-400">
-                        <i class="ph-fill ph-warning"></i> Pontos Críticos Atuais
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">O que mais incomoda a equipa selecionada neste momento, baseado nos 16 fatores analisados.</p>
-                    
-                    <div id="criticalFactorsContainer" class="flex-1 space-y-3">
-                        <!-- Injetado por JS -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Linha Inferior: IA Solutions Grid -->
-            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                    <div class="flex items-center gap-2">
-                        <i class="ph-fill ph-sparkle text-purple-500 text-2xl"></i>
-                        <div>
-                            <h2 class="text-xl font-bold">Planos de Ação Inteligentes</h2>
-                            <p class="text-sm text-slate-500">Gerados pelo Agile Coach IA com base nos pontos críticos.</p>
+            <!-- Gráfico, Pontos Críticos e IA -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Gráfico e Pontos Críticos lado esquerdo -->
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+                        <h3 id="chartTitle" class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <i class="ph ph-chart-line-up text-indigo-500"></i> Diagnóstico
+                        </h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="teamChart"></canvas>
                         </div>
                     </div>
-                    <div id="aiButtonsContainer">
-                        <button onclick="generateManagerInsights()" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:scale-[1.02] active:scale-95 text-white shadow-lg shadow-purple-500/20 text-sm px-4 py-2 rounded-lg font-medium transition-all">
-                            <i class="ph ph-sparkle"></i> Gerar Soluções
-                        </button>
+
+                    <!-- PONTOS CRÍTICOS (O que está a incomodar) -->
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+                        <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-rose-600 dark:text-rose-400">
+                            <i class="ph ph-warning text-xl"></i> Pontos Críticos Atuais (O que incomoda a equipa)
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Fatores com maior nível de alerta reportados pelos desenvolvedores nesta sprint:</p>
+                        <div id="criticalFactorsList" class="space-y-3">
+                            <!-- Preenchido via JS -->
+                        </div>
                     </div>
                 </div>
 
-                <div id="managerSolutionsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Cards injetados via JS -->
-                    <div class="col-span-3 text-center py-10 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-dashed border-slate-200 dark:border-slate-700">
-                        <i class="ph ph-robot text-4xl text-slate-300 dark:text-slate-600 mb-2 block"></i>
-                        <p class="text-slate-500">Clique no botão acima para analisar a equipa e gerar estratégias.</p>
+                <!-- Soluções IA lado direito -->
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-2">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-sparkle text-purple-500 text-xl"></i>
+                            <h2 class="text-xl font-bold">Agile Coach IA</h2>
+                        </div>
+                        <div id="aiButtonsContainer">
+                            <button onclick="generateManagerInsights()" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:scale-[1.02] active:scale-95 text-white shadow-lg shadow-purple-500/20 text-xs px-3 py-1.5 rounded-lg font-medium transition-all">
+                                <i class="ph ph-sparkle"></i> Gerar Análise Profunda
+                            </button>
+                        </div>
                     </div>
+                    <div id="managerSolutionsContainer" class="space-y-3"></div>
                 </div>
             </div>
         </section>
@@ -648,10 +672,10 @@
                             <i class="ph ph-users"></i> Squad Alpha
                         </span>
                     </div>
-                    <p class="opacity-90 text-sm mb-4">Os seus registos auxiliam na monitorização do Fator Humano e na adequação dos planeamentos ágeis.</p>
+                    <p class="opacity-90 text-sm mb-4">Os seus registos auxiliam na monitorização do Fator Humano e na adequação dos planeamentos.</p>
                     <div id="devAiContainer">
                         <button onclick="generateDevTip()" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors backdrop-blur-sm">
-                            <i class="ph ph-sparkle"></i> Pedir Conselho Empático à IA
+                            <i class="ph ph-sparkle"></i> Pedir Conselho à IA
                         </button>
                     </div>
                 </div>
@@ -659,38 +683,34 @@
             </div>
 
             <div class="text-center space-y-2 mb-6">
-                <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Check-in de Saúde e Trabalho</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">Como os seguintes fatores impactaram a sua Sprint hoje?</p>
+                <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Check-in Diário</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Avalie como os fatores impactaram o seu dia.</p>
             </div>
 
-            <div id="devFormContainer" class="space-y-4">
-                <!-- Gerado por JS baseado nas categorias -->
-            </div>
+            <div id="devFormContainer" class="space-y-4"></div>
 
             <button onclick="submitDevForm()" class="w-full py-4 text-lg mt-8 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-xl shadow-indigo-500/20 transition-all flex justify-center items-center gap-2">
-                Enviar Registos Confidenciais <i class="ph ph-check-circle"></i>
+                Enviar Check-in Seguro <i class="ph ph-check-circle"></i>
             </button>
         </section>
 
         <!-- ================= GUIA PRÁTICO ================= -->
         <section id="view-guide" class="hidden-section max-w-4xl mx-auto fade-in pb-20">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+            <div class="flex justify-between items-center mb-8">
                 <div>
                     <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Guia Prático PMBOK + Ágil</h2>
-                    <p class="text-slate-500 dark:text-slate-400 mt-2">Diretrizes para integração focada no Fator Humano e Bem-estar.</p>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Diretrizes para integração focada no Fator Humano.</p>
                 </div>
-                <button onclick="exportToPDF()" class="flex items-center gap-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 px-4 py-2 rounded-lg font-medium transition-colors shrink-0">
-                    <i class="ph ph-file-pdf text-xl"></i> Exportar PDF
+                <button onclick="exportToPDF()" class="flex items-center gap-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 px-4 py-2 rounded-lg font-medium transition-colors">
+                    <i class="ph ph-file-pdf"></i> Exportar PDF
                 </button>
             </div>
 
-            <!-- Div que será exportada para PDF -->
-            <div id="pdfContent" class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-8 sm:p-10 space-y-8">
+            <div id="pdfContent" class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-8 space-y-8">
                 <div class="prose dark:prose-invert max-w-none">
-                    
                     <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2">4. Diretrizes Preliminares para Integração PMBOK + Ágil</h1>
                     <p class="text-justify mt-4 leading-relaxed">
-                        Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipas e na melhoria do desempenho dos projetos de software. A integração busca equilibrar previsibilidade e flexibilidade, considerando não apenas resultados técnicos, mas impactos humanos.
+                        Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipas e na melhoria do desempenho dos projetos de software.
                     </p>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.1 Planeamento Adaptativo com Limites Claros</h2>
@@ -705,7 +725,7 @@
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.3 Rituais Ágeis com Propósito</h2>
                     <p class="text-justify mt-2 leading-relaxed">
-                        As cerimónias ágeis (daily meetings, planning, review e retrospectivas) devem ter objetivos claros e duração adequada. Reuniões sem propósito ou excessivamente longas podem gerar fadiga e perda de foco.
+                        As cerimónias ágeis (daily meetings, planning, review e retrospectivas) devem ter objetivos claros e duração adequada. Reuniões sem propósito ou excessivamente longas podem gerar fadiga.
                     </p>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.4 Comunicação Estruturada e Saudável</h2>
@@ -719,67 +739,48 @@
                     </p>
 
                     <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">5. Guia Prático</h1>
-                    <p class="text-justify mt-4 leading-relaxed">
-                        Fornece instruções passo a passo para integrar os princípios, garantindo resultados consistentes.
-                    </p>
                     
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.1 Etapa 1 — Diagnóstico do Contexto</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
                         <li>Identificação do público-alvo e stakeholders.</li>
                         <li>Mapeamento da estrutura organizacional.</li>
                         <li>Levantamento de processos e práticas existentes.</li>
-                        <li>Avaliação de capacidade da equipa e análise de riscos.</li>
+                        <li>Avaliação de capacidade da equipa.</li>
+                        <li>Análise de riscos e desafios.</li>
                     </ul>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.2 Etapa 2 — Planeamento Integrado</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
-                        <li>Definir objetivos do projeto e estruturar entregas incrementais.</li>
-                        <li>Estabelecer limites de escopo e prazo (evitar sobrecarga).</li>
-                        <li>Planear recursos e definir métricas de desempenho.</li>
+                        <li>Definir objetivos do projeto.</li>
+                        <li>Estruturar entregas incrementais.</li>
+                        <li>Estabelecer limites de escopo e prazo.</li>
+                        <li>Planear recursos e responsabilidades.</li>
+                        <li>Definir métricas de desempenho.</li>
                     </ul>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.3 Etapa 3 — Execução e Monitorização</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
-                        <li>Implementar atividades planeadas e reuniões de alinhamento.</li>
-                        <li>Monitorizar métricas de bem-estar em tempo real.</li>
-                        <li>Promover liderança facilitadora e documentar lições.</li>
+                        <li>Implementar atividades planeadas.</li>
+                        <li>Realizar reuniões de alinhamento e retrospectivas.</li>
+                        <li>Monitorizar métricas de desempenho e bem-estar.</li>
+                        <li>Gerir riscos em tempo real.</li>
+                        <li>Promover liderança facilitadora.</li>
                     </ul>
 
                     <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">7. Checklist de Aplicação</h1>
-                    <p class="text-justify mt-4 leading-relaxed">
-                        O checklist atua como uma ferramenta prática para avaliar a implementação das diretrizes.
-                    </p>
-
                     <div class="mt-6 space-y-4">
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">O escopo e os objetivos estão claramente definidos?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">A ausência de clareza gera retrabalho e desalinhamento.</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">O escopo e os objetivos do projeto estão claramente definidos?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Verifique se todos os stakeholders compreendem os objetivos estratégicos.</span>
                             </div>
                         </label>
-
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Metas excessivamente agressivas tendem a gerar pressão psicológica.</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
-                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
-                            <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As reuniões possuem propósito claro e duração adequada?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Reuniões redundantes aumentam a sensação de sobrecarga.</span>
-                            </div>
-                        </label>
-                        
-                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
-                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
-                            <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">Há sinais de sobrecarga emocional ou cansaço recorrente?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Identifique fadiga mental e reavalie prazos imediatamente.</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real da equipa?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Avalie se o volume de trabalho planeado considera a disponibilidade real.</span>
                             </div>
                         </label>
                     </div>
@@ -795,6 +796,7 @@
         <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Dados Registados!</h3>
         <p class="text-slate-500 mt-2">Obrigado pela contribuição.</p>
     </div>
+
 </body>
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
