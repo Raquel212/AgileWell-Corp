@@ -81,7 +81,7 @@
 
                 <div>
                     <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-tight">
-                        Alerta Crítico: Squad Alpha
+                        Alerta Crítico: Equipe Alpha
                     </p>
 
                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -103,7 +103,7 @@
                     </p>
 
                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        A Squad Gamma apresentou aumento nos níveis de estresse.
+                        A Equipe Gamma apresentou aumento nos níveis de estresse.
                     </p>
                 </div>
 
@@ -240,7 +240,7 @@
                         <div id="profileDropdown" class="hidden absolute top-12 right-0 w-56 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
                             <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-700">
                                 <p id="dropdownName" class="text-sm font-bold text-slate-800 dark:text-white truncate">Nome</p>
-                                <p id="dropdownEmail" class="text-xs text-slate-500 truncate mt-0.5">email</p>
+                                <p id="dropdownEmail" class="text-xs text-slate-500 truncate mt-0.5">e-mail</p>
                             </div>
                             <div class="border-t border-slate-100 dark:border-slate-700 py-1.5 bg-rose-50/50 dark:bg-rose-900/10">
                                 <button onclick="logout()" class="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-900/30 text-left transition-colors">
@@ -269,248 +269,280 @@
     <main class="max-w-7xl mx-auto px-4 py-8">
         
         <!-- ================= LANDING PAGE ================= -->
-        <section id="view-home" class="flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto space-y-10 py-12 fade-in">
+        <section id="view-home" class="space-y-12 md:space-y-16 fade-in pb-6">
 
-            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-5 rounded-3xl shadow-xl shadow-indigo-500/30">
-                <i class="ph ph-buildings text-6xl text-white"></i>
-            </div>
+            <!-- ================= HERO / BANNER ================= -->
+            <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 text-white shadow-2xl shadow-indigo-500/25">
 
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                AgileWell <span class="text-indigo-600">Corp</span>
-            </h1>
+                <!-- Decoração de fundo -->
+                <div class="absolute -top-28 -left-24 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-36 -right-24 w-96 h-96 bg-fuchsia-400/25 rounded-full blur-3xl pointer-events-none"></div>
+                <i class="ph-fill ph-buildings absolute top-12 right-12 text-white/15 text-8xl rotate-12 hidden lg:block pointer-events-none"></i>
+                <i class="ph-fill ph-robot absolute bottom-12 left-10 text-white/15 text-7xl -rotate-12 hidden lg:block pointer-events-none"></i>
+                <i class="ph-fill ph-heartbeat absolute top-1/2 -translate-y-1/2 left-8 text-white/10 text-6xl hidden md:block pointer-events-none"></i>
 
-            <p class="text-xl text-slate-600 dark:text-slate-300 max-w-4xl leading-relaxed">
-                Plataforma corporativa de inteligência para gestão do Fator Humano em equipas de alta performance.
-                Integre as práticas estruturadas do PMBOK com a agilidade das metodologias ágeis para monitorar
-                indicadores de bem-estar, produtividade, colaboração e sustentabilidade organizacional,
-                reduzindo riscos de esgotamento profissional e promovendo ambientes de trabalho mais saudáveis.
-            </p>
+                <div class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-20 lg:py-24 text-center">
 
-            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
-                <button onclick="navigate('login')"
-                    class="w-full py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-md transition-all hover:scale-105">
-                    Acessar à Plataforma <i class="ph ph-arrow-right ml-1"></i>
-                </button>
-            </div>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-sm font-semibold">
+                        <i class="ph ph-shield-check"></i> Fator Humano · PMBOK + Ágil · IA
+                    </span>
 
-            <!-- FUNCIONAMENTO -->
-            <div class="w-full text-left pt-16 space-y-8">
+                    <h1 class="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                        Equipas saudáveis,
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-200">entregas sustentáveis.</span>
+                    </h1>
 
-                <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                    <h2 class="text-3xl font-bold text-slate-800 dark:text-white flex items-center gap-3">
-                        <i class="ph-fill ph-info text-indigo-500"></i>
-                        Como o Sistema Funciona?
-                    </h2>
-
-                    <p class="text-slate-500 dark:text-slate-400 mt-2">
-                        Conheça os principais módulos da plataforma e como eles ajudam gestores e equipas a
-                        monitorar o fator humano durante o ciclo de desenvolvimento de software.
+                    <p class="mt-6 text-lg md:text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+                        Monitore bem-estar, produtividade e colaboração em tempo real — e receba recomendações de IA antes que o esgotamento aconteça.
                     </p>
+
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <button onclick="navigate('login')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold shadow-lg shadow-indigo-900/20 hover:scale-105 transition-all">
+                            Acessar à Plataforma <i class="ph ph-arrow-right"></i>
+                        </button>
+                        <button onclick="navigate('guide')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/15 border border-white/40 font-semibold backdrop-blur-sm hover:bg-white/25 transition-colors">
+                            <i class="ph ph-book-open"></i> Conhecer o Guia
+                        </button>
+                    </div>
+
+                    <div class="mt-14 grid grid-cols-3 gap-4 max-w-lg mx-auto">
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-3">
+                            <div class="text-2xl font-extrabold">16</div>
+                            <div class="text-[11px] uppercase tracking-wider opacity-80">Fatores</div>
+                        </div>
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-3">
+                            <div class="text-2xl font-extrabold">5+</div>
+                            <div class="text-[11px] uppercase tracking-wider opacity-80">Equipe</div>
+                        </div>
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-3">
+                            <div class="text-2xl font-extrabold">24/7</div>
+                            <div class="text-[11px] uppercase tracking-wider opacity-80">Monitorização</div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- ================= DIVISOR ================= -->
+            <div class="flex items-center gap-4">
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-violet-500"></div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <i class="ph ph-squares-four text-xl"></i>
+                </div>
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-l from-transparent via-indigo-500 to-violet-500"></div>
+            </div>
 
-                    <!-- CARD 1 -->
-                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
+            <!-- ================= PROPOSTA ================= -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 dark:text-white">
+                    A proposta em <span class="linear-gradient-text">três frentes</span>
+                </h2>
+                <p class="text-center text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto">
+                    Ciência, dados e inteligência artificial para proteger quem constrói o software.
+                </p>
 
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
-                                    <i class="ph ph-user-check text-3xl"></i>
-                                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
-                                    1. Check-in Diário de Fatores
-                                </h3>
-                            </div>
-
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
-                                Os colaboradores realizam avaliações periódicas de 16 fatores distribuídos entre
-                                Saúde & Bem-Estar, Dinâmica do Time, Trabalho & Entregas e Visão Geral do Projeto.
-                                Os dados são tratados de forma confidencial e transformados em indicadores que
-                                permitem identificar tendências relacionadas à motivação, fadiga, pressão
-                                psicológica, comunicação, autonomia e satisfação da equipa.
-                            </p>
+                    <div class="relative p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-rose-500 to-orange-400"></div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-orange-400 text-white flex items-center justify-center shadow-md shadow-rose-500/25">
+                            <i class="ph ph-heartbeat text-2xl"></i>
                         </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                            Foco na Autonomia, Saúde e Qualidade de Vida
-                        </div>
-
+                        <h3 class="mt-4 font-bold text-lg text-slate-800 dark:text-white">Check-in de Fatores</h3>
+                        <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Avaliações rápidas e confidenciais de 16 fatores para identificar sinais antes do burnout.</p>
                     </div>
 
-                    <!-- CARD 2 -->
-                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                                    <i class="ph ph-chart-bar text-3xl"></i>
-                                </div>
-
-                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
-                                    2. Analytics de Squads & Risco
-                                </h3>
-                            </div>
-
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
-                                O painel executivo consolida informações estratégicas da organização,
-                                apresentando indicadores de saúde das equipas, tendências de evolução,
-                                níveis de risco, padrões de comportamento e alertas preventivos.
-                                Gestores conseguem acompanhar a evolução dos squads ao longo das sprints
-                                e identificar rapidamente situações críticas.
-                            </p>
+                    <div class="relative p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-white flex items-center justify-center shadow-md shadow-blue-500/25">
+                            <i class="ph ph-chart-bar text-2xl"></i>
                         </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-400">
-                            Gestão Baseada em Dados e Evidências
-                        </div>
-
+                        <h3 class="mt-4 font-bold text-lg text-slate-800 dark:text-white">Análise das Equipes</h3>
+                        <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Indicadores de saúde, risco e tendências das equipas em tempo real.</p>
                     </div>
 
-                    <!-- CARD 3 -->
-                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-3 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                                    <i class="ph ph-robot text-3xl"></i>
-                                </div>
-
-                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
-                                    3. Agile Coach IA
-                                </h3>
-                            </div>
-
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
-                                O módulo de Inteligência Artificial interpreta os indicadores do time
-                                e gera recomendações práticas para líderes, Scrum Masters, Product Owners
-                                e gestores. As sugestões incluem ações para melhorar comunicação,
-                                colaboração, equilíbrio da carga de trabalho, engajamento e prevenção
-                                de burnout.
-                            </p>
+                    <div class="relative p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-400"></div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white flex items-center justify-center shadow-md shadow-purple-500/25">
+                            <i class="ph ph-robot text-2xl"></i>
                         </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-purple-600 dark:text-purple-400">
-                            Recomendações Inteligentes e Automatizadas
-                        </div>
-
-                    </div>
-
-                    <!-- CARD 4 -->
-                    <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between hover:shadow-lg transition-all">
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
-                                    <i class="ph ph-book-open text-3xl"></i>
-                                </div>
-
-                                <h3 class="font-bold text-xl text-slate-800 dark:text-white">
-                                    4. Guia Prático & Checklist
-                                </h3>
-                            </div>
-
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
-                                Disponibiliza o guia desenvolvido a partir da pesquisa científica,
-                                reunindo boas práticas para diagnóstico, planeamento integrado,
-                                execução, monitorização contínua e avaliação dos fatores humanos.
-                                Os gestores podem exportar relatórios e checklists em PDF para
-                                documentação institucional.
-                            </p>
-                        </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                            Fundamentação Científica e Aplicação Prática
-                        </div>
-
+                        <h3 class="mt-4 font-bold text-lg text-slate-800 dark:text-white"> AI Coach</h3>
+                        <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Recomendações práticas e personalizadas para líderes e equipas.</p>
                     </div>
 
                 </div>
+            </div>
 
-                <!-- COMO UTILIZAR -->
-                <div class="pt-16">
+            <!-- ================= DIVISOR ================= -->
+            <div class="flex items-center gap-4">
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-violet-500"></div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <i class="ph ph-cube text-xl"></i>
+                </div>
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-l from-transparent via-indigo-500 to-violet-500"></div>
+            </div>
 
-                    <h2 class="text-3xl font-bold text-center text-slate-800 dark:text-white mb-10">
-                        Como Utilizar a Plataforma
+            <!-- ================= MÓDULOS ================= -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 dark:text-white">
+                    Módulos da <span class="linear-gradient-text">Plataforma</span>
+                </h2>
+                <p class="text-center text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto">
+                    Ferramentas sob medida para gestores e colaboradores.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-indigo-100 dark:border-indigo-900/40 shadow-sm hover:shadow-lg transition-all">
+                        <div class="flex items-center justify-between">
+                            <div class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center"><i class="ph ph-user-check text-xl"></i></div>
+                            <span class="text-3xl font-extrabold text-indigo-100 dark:text-indigo-900">01</span>
+                        </div>
+                        <h3 class="mt-4 font-bold text-slate-800 dark:text-white">Check-in Diário</h3>
+                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Avaliações rápidas e confidenciais.</p>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-blue-100 dark:border-blue-900/40 shadow-sm hover:shadow-lg transition-all">
+                        <div class="flex items-center justify-between">
+                            <div class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center"><i class="ph ph-chart-bar text-xl"></i></div>
+                            <span class="text-3xl font-extrabold text-blue-100 dark:text-blue-900">02</span>
+                        </div>
+                        <h3 class="mt-4 font-bold text-slate-800 dark:text-white">Análise e Risco</h3>
+                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Alertas e tendências em tempo real.</p>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-purple-100 dark:border-purple-900/40 shadow-sm hover:shadow-lg transition-all">
+                        <div class="flex items-center justify-between">
+                            <div class="w-11 h-11 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center"><i class="ph ph-robot text-xl"></i></div>
+                            <span class="text-3xl font-extrabold text-purple-100 dark:text-purple-900">03</span>
+                        </div>
+                        <h3 class="mt-4 font-bold text-slate-800 dark:text-white">AI Coach</h3>
+                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Recomendações inteligentes.</p>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-emerald-100 dark:border-emerald-900/40 shadow-sm hover:shadow-lg transition-all">
+                        <div class="flex items-center justify-between">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center"><i class="ph ph-book-open text-xl"></i></div>
+                            <span class="text-3xl font-extrabold text-emerald-100 dark:text-emerald-900">04</span>
+                        </div>
+                        <h3 class="mt-4 font-bold text-slate-800 dark:text-white">Guia e Checklist</h3>
+                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Boas práticas e exportação em PDF.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= DIVISOR ================= -->
+            <div class="flex items-center gap-4">
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-violet-500"></div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <i class="ph ph-rocket text-xl"></i>
+                </div>
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-l from-transparent via-indigo-500 to-violet-500"></div>
+            </div>
+
+            <!-- ================= COMO UTILIZAR ================= -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 dark:text-white">
+                    Como <span class="linear-gradient-text">utilizar</span>
+                </h2>
+                <p class="text-center text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto">
+                    Quatro passos simples para começar hoje.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                    <div class="bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-2xl p-6 shadow-lg shadow-indigo-500/25">
+                        <div class="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-extrabold">1</div>
+                        <h3 class="mt-4 font-bold">Cadastrar</h3>
+                        <p class="mt-1 text-sm text-indigo-100">Registre a organização, equipes e responsáveis.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-violet-600 to-fuchsia-600 text-white rounded-2xl p-6 shadow-lg shadow-violet-500/25">
+                        <div class="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-extrabold">2</div>
+                        <h3 class="mt-4 font-bold">Avaliar</h3>
+                        <p class="mt-1 text-sm text-violet-100">Equipes respondem check-ins rápidos sobre fatores humanos.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-fuchsia-600 to-pink-600 text-white rounded-2xl p-6 shadow-lg shadow-fuchsia-500/25">
+                        <div class="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-extrabold">3</div>
+                        <h3 class="mt-4 font-bold">Monitorar</h3>
+                        <p class="mt-1 text-sm text-pink-100">Dashboards consolidam indicadores e identificam riscos.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pink-600 to-rose-600 text-white rounded-2xl p-6 shadow-lg shadow-rose-500/25">
+                        <div class="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-extrabold">4</div>
+                        <h3 class="mt-4 font-bold">Agir</h3>
+                        <p class="mt-1 text-sm text-rose-100">Aplique recomendações de IA e do guia na rotina da equipe.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= DIVISOR ================= -->
+            <div class="flex items-center gap-4">
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-violet-500"></div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <i class="ph ph-star text-xl"></i>
+                </div>
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-l from-transparent via-indigo-500 to-violet-500"></div>
+            </div>
+
+            <!-- ================= BENEFÍCIOS ================= -->
+            <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 text-white p-8 md:p-12 shadow-2xl shadow-indigo-500/25">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-16 w-72 h-72 bg-fuchsia-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-center">
+                        Por que a <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-fuchsia-200">AgileWell Corp</span>
                     </h2>
+                    <p class="text-center text-indigo-100 mt-3 max-w-2xl mx-auto">Resultados que protegem pessoas e performance.</p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-                            <div class="text-4xl font-bold text-indigo-600 mb-4">1</div>
-                            <h3 class="font-semibold mb-2">Cadastrar</h3>
-                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
-                                Registe a organização, equipas e responsáveis pelo acompanhamento.
-                            </p>
+                    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm p-6">
+                            <i class="ph ph-shield-check text-3xl text-amber-300"></i>
+                            <h3 class="mt-3 font-bold">Redução de Burnout</h3>
+                            <p class="mt-1 text-sm text-indigo-100">Identificação precoce de sobrecarga física e emocional.</p>
                         </div>
-
-                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-                            <div class="text-4xl font-bold text-blue-600 mb-4">2</div>
-                            <h3 class="font-semibold mb-2">Avaliar</h3>
-                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
-                                Os colaboradores respondem avaliações rápidas sobre fatores humanos.
-                            </p>
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm p-6">
+                            <i class="ph ph-trend-up text-3xl text-emerald-300"></i>
+                            <h3 class="mt-3 font-bold">Maior Produtividade</h3>
+                            <p class="mt-1 text-sm text-indigo-100">Equipes saudáveis produzem melhor e de forma sustentável.</p>
                         </div>
-
-                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-                            <div class="text-4xl font-bold text-purple-600 mb-4">3</div>
-                            <h3 class="font-semibold mb-2">Monitorar</h3>
-                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
-                                Os dashboards consolidam indicadores e identificam riscos.
-                            </p>
+                        <div class="rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm p-6">
+                            <i class="ph ph-lightbulb text-3xl text-cyan-300"></i>
+                            <h3 class="mt-3 font-bold">Decisões Inteligentes</h3>
+                            <p class="mt-1 text-sm text-indigo-100">Dados, métricas e IA para apoiar a liderança.</p>
                         </div>
-
-                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-                            <div class="text-4xl font-bold text-emerald-600 mb-4">4</div>
-                            <h3 class="font-semibold mb-2">Agir</h3>
-                            <p class="text-sm text-justify text-slate-500 dark:text-slate-400">
-                                Utilize recomendações da IA e do guia para melhorar continuamente o ambiente de trabalho.
-                            </p>
-                        </div>
-
                     </div>
-
                 </div>
+            </div>
 
-                <!-- BENEFÍCIOS -->
-                <div class="pt-16">
-
-                    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-10 text-white">
-
-                        <h2 class="text-3xl font-bold mb-6">
-                            Benefícios da AgileWell Corp
-                        </h2>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-
-                            <div>
-                                <h3 class="font-bold mb-2">Redução de Burnout</h3>
-                                <p class="text-indigo-100 text-sm">
-                                    Identificação precoce de sinais de sobrecarga física e emocional.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 class="font-bold mb-2">Maior Produtividade</h3>
-                                <p class="text-indigo-100 text-sm">
-                                    Equipas mais saudáveis produzem melhor e de forma sustentável.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 class="font-bold mb-2">Decisões Inteligentes</h3>
-                                <p class="text-indigo-100 text-sm">
-                                    Dados, métricas e IA para apoiar a liderança organizacional.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+            <!-- ================= DIVISOR ================= -->
+            <div class="flex items-center gap-4">
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-violet-500"></div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                    <i class="ph ph-arrow-right text-xl"></i>
                 </div>
+                <div class="flex-1 h-[3px] rounded-full bg-gradient-to-l from-transparent via-indigo-500 to-violet-500"></div>
+            </div>
 
+            <!-- ================= CTA FINAL ================= -->
+            <div class="relative overflow-hidden rounded-[2rem] bg-slate-900 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 md:p-14 text-center">
+                <i class="ph-fill ph-sparkle absolute -top-6 right-8 text-indigo-500/30 text-8xl rotate-12 pointer-events-none"></i>
+                <i class="ph-fill ph-heartbeat absolute -bottom-8 left-6 text-fuchsia-500/25 text-8xl -rotate-12 pointer-events-none"></i>
+
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-white">
+                        Pronto para cuidar do <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-pink-300">fator humano</span>?
+                    </h2>
+                    <p class="mt-3 text-slate-300 max-w-xl mx-auto">
+                        Entre na plataforma e veja, de verdade, como a sua equipe está.
+                    </p>
+                    <button onclick="navigate('login')" class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-fuchsia-600 text-white font-bold shadow-lg shadow-indigo-500/30 hover:scale-105 transition-all">
+                        Começar agora <i class="ph ph-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
         </section>
@@ -532,7 +564,7 @@
                         </h1>
 
                         <p class="mt-5 text-base text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
-                            Monitore o bem-estar das equipas, acompanhe indicadores organizacionais, receba recomendações baseadas em Inteligência Artificial e implemente melhorias contínuas utilizando práticas ágeis e PMBOK.
+                            Monitore o bem-estar das equipes, acompanhe indicadores organizacionais, receba recomendações baseadas em Inteligência Artificial e implemente melhorias contínuas utilizando práticas ágeis e PMBOK.
                         </p>
                     </div>
 
@@ -543,7 +575,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-slate-800 dark:text-white text-base">Cadastre Organizações</h3>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Registe empresas, departamentos, equipas e responsáveis pelo acompanhamento.</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Registre empresas, departamentos, equipes e responsáveis pelo acompanhamento.</p>
                             </div>
                         </div>
 
@@ -552,7 +584,7 @@
                                 <i class="ph ph-users-three text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-800 dark:text-white text-base">Monitorize Equipas</h3>
+                                <h3 class="font-bold text-slate-800 dark:text-white text-base">Monitorize Equipes</h3>
                                 <p class="text-sm text-slate-500 dark:text-slate-400">Acompanhe indicadores de saúde organizacional, motivação e produtividade.</p>
                             </div>
                         </div>
@@ -576,7 +608,7 @@
                             <i id="authIconHeader" class="ph ph-buildings text-2xl"></i>
                         </div>
                         <h2 id="authTitle" class="text-2xl font-bold text-slate-900 dark:text-white">Acesso Corporativo</h2>
-                        <p id="authSubtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Selecione o seu perfil de acesso ou registe a empresa</p>
+                        <p id="authSubtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Selecione o seu perfil de acesso ou registre a empresa</p>
                     </div>
 
                     <!-- Seletor de Perfil (Apenas visível no Modo Login) -->
@@ -659,7 +691,7 @@
 
                         <div class="text-center pt-2">
                             <button onclick="toggleRegisterMode()" id="toggleRegBtn" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-                                É gestor e quer cadastrar a empresa? Clique aqui
+                                Você é gestor e quer cadastrar uma empresa? Clique aqui
                             </button>
                         </div>
                     </div>
@@ -682,8 +714,8 @@
             </h1>
             
             <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                Plataforma de inteligência para gestão do Fator Humano em equipas de alta performance. 
-                Integre as práticas do PMBOK com abordagens ágeis para proteger a saúde das equipas.
+                Plataforma de inteligência para gestão do Fator Humano em equipes de alta performance. 
+                Integre as práticas do PMBOK com abordagens ágeis para proteger a saúde das equipes.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md pt-4">
@@ -695,8 +727,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 text-left w-full">
                 <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
                     <i class="ph ph-chart-bar text-3xl text-indigo-500 mb-3 block"></i>
-                    <h3 class="font-bold text-lg mb-2">Analytics de Squads</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Compare a saúde de múltiplas equipas em tempo real com gráficos consolidados.</p>
+                    <h3 class="font-bold text-lg mb-2">Análise de Equipe</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Compare a saúde de múltiplas equipes em tempo real com gráficos consolidados.</p>
                 </div>
                 <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
                     <i class="ph ph-warning-circle text-3xl text-rose-500 mb-3 block"></i>
@@ -708,7 +740,7 @@
                         <i class="ph ph-robot text-3xl text-purple-500"></i>
                         <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-full">IA</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Agile Coach IA</h3>
+                    <h3 class="font-bold text-lg mb-2">AI Coach</h3>
                     <p class="text-sm text-slate-500 dark:text-slate-400">Inteligência Artificial que gera planos de ação customizados para cada gestor.</p>
                 </div>
             </div>
@@ -725,7 +757,7 @@
                     <div class="grid grid-cols-3 gap-4">
                         <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl text-center">
                             <div class="text-3xl font-bold">3</div>
-                            <div class="text-xs text-slate-500 uppercase font-bold">Squads Ativas</div>
+                            <div class="text-xs text-slate-500 uppercase font-bold">Equipes Ativas</div>
                         </div>
                         <div class="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl text-center border border-rose-100 dark:border-rose-900">
                             <div class="text-3xl font-bold text-rose-600 dark:text-rose-400">1</div>
@@ -740,9 +772,9 @@
                 <!-- Seletor de Equipa -->
                 <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-bold text-slate-700 dark:text-slate-200">Selecione a Equipa</h3>
+                        <h3 class="font-bold text-slate-700 dark:text-slate-200">Selecione a Equipe</h3>
                         <button onclick="toggleSquadForm()" class="flex items-center gap-1 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg transition-colors">
-                            <i class="ph ph-plus"></i> Squad
+                            <i class="ph ph-plus"></i> Equipe
                         </button>
                     </div>
                     <div id="teamSelector" class="space-y-2"></div>
@@ -754,9 +786,9 @@
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <h3 class="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2">
-                            <i class="ph ph-users-three text-indigo-500"></i> Cadastrar Squad
+                            <i class="ph ph-users-three text-indigo-500"></i> Cadastrar Equipe
                         </h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Registe a equipa e o e-mail corporativo para enviar os convites aos desenvolvedores.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Registre a equipe e o e-mail corporativo para enviar os convites aos desenvolvedores.</p>
                     </div>
                     <button onclick="toggleSquadForm()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400">
                         <i class="ph ph-x text-lg"></i>
@@ -765,7 +797,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome do Squad</label>
+                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nome da Equipe</label>
                         <div class="relative mt-1">
                             <i class="ph ph-squares-four absolute left-3 top-3.5 text-slate-400"></i>
                             <input type="text" id="squadName" placeholder="Ex: Squad Delta" class="block w-full pl-10 pr-3 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
@@ -789,7 +821,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button onclick="registerSquad()" class="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium shadow-md transition-all">
-                        <i class="ph ph-check-circle"></i> Cadastrar Squad e Enviar Convites
+                        <i class="ph ph-check-circle"></i> Cadastrar Equipe e Enviar Convites
                     </button>
                     <button onclick="clearSquadForm()" class="flex items-center justify-center gap-2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 px-4 py-3 rounded-xl font-medium transition-colors">
                         Limpar
@@ -799,7 +831,7 @@
                 <!-- Squads cadastrados pelo gestor -->
                 <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700">
                     <h4 class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-2">
-                        <i class="ph ph-database text-indigo-500"></i> Squads Cadastrados
+                        <i class="ph ph-database text-indigo-500"></i> Equipes Cadastradas
                     </h4>
                     <div id="squadList" class="space-y-2"></div>
                 </div>
@@ -821,7 +853,7 @@
                     <!-- PONTOS CRÍTICOS (O que está a incomodar) -->
                     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
                         <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-rose-600 dark:text-rose-400">
-                            <i class="ph ph-warning text-xl"></i> Pontos Críticos Atuais (O que incomoda a equipa)
+                            <i class="ph ph-warning text-xl"></i> Pontos Críticos Atuais (O que incomoda a equipe)
                         </h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Fatores com maior nível de alerta reportados pelos desenvolvedores nesta sprint:</p>
                         <div id="criticalFactorsList" class="space-y-3">
@@ -835,7 +867,7 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-2">
                         <div class="flex items-center gap-2">
                             <i class="ph-fill ph-sparkle text-purple-500 text-xl"></i>
-                            <h2 class="text-xl font-bold">Agile Coach IA</h2>
+                            <h2 class="text-xl font-bold">AI Coach</h2>
                         </div>
                         <div id="aiButtonsContainer">
                             <button onclick="generateManagerInsights()" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:scale-[1.02] active:scale-95 text-white shadow-lg shadow-purple-500/20 text-xs px-3 py-1.5 rounded-lg font-medium transition-all">
@@ -875,7 +907,7 @@
                         </div>
                         <div class="flex gap-2">
                             <button onclick="orientTeamAI()" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:scale-[1.02] text-white text-xs px-3 py-2 rounded-lg font-medium transition-all shadow-md">
-                                <i class="ph ph-send"></i> Orientar Equipa
+                                <i class="ph ph-send"></i> Orientar Equipe
                             </button>
                             <button onclick="orientDevAI()" id="orientDevBtn" disabled class="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs px-3 py-2 rounded-lg font-medium transition-all shadow-md disabled:opacity-40 disabled:cursor-not-allowed">
                                 <i class="ph ph-user-sound"></i> Orientar Desenvolvedor
@@ -898,10 +930,10 @@
                     <div class="flex justify-between items-start mb-2">
                         <h2 class="text-xl font-bold">Olá, Colaborador!</h2>
                         <span class="bg-white/20 px-2 py-1 rounded text-xs font-bold backdrop-blur-sm flex items-center gap-1">
-                            <i class="ph ph-users"></i> Squad Alpha
+                            <i class="ph ph-users"></i> Equipe Alpha
                         </span>
                     </div>
-                    <p class="opacity-90 text-sm mb-4">Os seus registos auxiliam na monitorização do Fator Humano e na adequação dos planeamentos.</p>
+                    <p class="opacity-90 text-sm mb-4">Os seus registros auxiliam na monitorização do Fator Humano e na adequação dos planejamentos.</p>
                     <div id="devAiContainer">
                         <button onclick="generateDevTip()" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors backdrop-blur-sm">
                             <i class="ph ph-sparkle"></i> Pedir Conselho à IA
@@ -939,17 +971,17 @@
                 <div class="prose dark:prose-invert max-w-none">
                     <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2">1. Diretrizes Preliminares para Integração PMBOK + Ágil</h1>
                     <p class="text-justify mt-4 leading-relaxed">
-                        Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipas e na melhoria do desempenho dos projetos de software.
+                        Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipes e na melhoria do desempenho dos projetos de software.
                     </p>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.1 Planeamento Adaptativo com Limites Claros</h2>
                     <p class="text-justify mt-2 leading-relaxed">
-                        O planeamento deve equilibrar flexibilidade e definição clara de objetivos, garantindo que a equipa saiba quais entregas são prioritárias e quais são os limites de escopo e recursos. A ausência de limites claros no planeamento é uma das principais causas de retrabalho e sobrecarga.
+                        O planeamento deve equilibrar flexibilidade e definição clara de objetivos, garantindo que a equipe saiba quais entregas são prioritárias e quais são os limites de escopo e recursos. A ausência de limites claros no planeamento é uma das principais causas de retrabalho e sobrecarga.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.2 Gestão de Prazos Orientada à Capacidade da Equipa</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.2 Gestão de Prazos Orientada à Capacidade da Equipe</h2>
                     <p class="text-justify mt-2 leading-relaxed">
-                        Os prazos devem ser definidos considerando a capacidade real da equipa e o ritmo sustentável de trabalho. Prazos excessivamente rígidos podem aumentar o estresse e reduzir a produtividade.
+                        Os prazos devem ser definidos considerando a capacidade real da equipe e o ritmo sustentável de trabalho. Prazos excessivamente rígidos podem aumentar o estresse e reduzir a produtividade.
                     </p>
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.3 Rituais Ágeis com Propósito</h2>
@@ -974,7 +1006,7 @@
                         <li>Identificação do público-alvo e stakeholders.</li>
                         <li>Mapeamento da estrutura organizacional.</li>
                         <li>Levantamento de processos e práticas existentes.</li>
-                        <li>Avaliação de capacidade da equipa.</li>
+                        <li>Avaliação de capacidade da equipe.</li>
                         <li>Análise de riscos e desafios.</li>
                     </ul>
 
@@ -989,7 +1021,7 @@
 
                     <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">2.3 Etapa 3 — Execução e Monitorização</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
-                        <li>Implementar atividades planeadas.</li>
+                        <li>Implementar atividades planejadas.</li>
                         <li>Realizar reuniões de alinhamento e retrospectivas.</li>
                         <li>Monitorizar métricas de desempenho e bem-estar.</li>
                         <li>Gerir riscos em tempo real.</li>
@@ -1002,14 +1034,14 @@
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">O escopo e os objetivos do projeto estão claramente definidos?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Verifique se todos os stakeholders compreendem os objetivos estratégicos, as entregas esperadas e os critérios de sucesso do projeto. A ausência de clareza nessa definição pode gerar retrabalho, conflitos de prioridade e desalinhamento entre equipa e gestão. Caso sejam identificadas inconsistências, recomenda-se revisar o planeamento inicial, redefinir prioridades e formalizar as decisões para garantir rastreabilidade e alinhamento contínuo.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Verifique se todos os stakeholders compreendem os objetivos estratégicos, as entregas esperadas e os critérios de sucesso do projeto. A ausência de clareza nessa definição pode gerar retrabalho, conflitos de prioridade e desalinhamento entre equipe e gestão. Caso sejam identificadas inconsistências, recomenda-se revisar o planeamento inicial, redefinir prioridades e formalizar as decisões para garantir rastreabilidade e alinhamento contínuo.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real da equipa?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Avalie se o volume de trabalho planeado considera a disponibilidade dos profissionais, a complexidade das tarefas e o histórico de entregas anteriores. Metas excessivamente agressivas tendem a gerar pressão psicológica, queda de qualidade e desmotivação. Sempre que necessário, os prazos devem ser ajustados com base em dados concretos e não apenas em expectativas organizacionais.</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real da equipe?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Avalie se o volume de trabalho planejado considera a disponibilidade dos profissionais, a complexidade das tarefas e o histórico de entregas anteriores. Metas excessivamente agressivas tendem a gerar pressão psicológica, queda de qualidade e desmotivação. Sempre que necessário, os prazos devem ser ajustados com base em dados concretos e não apenas em expectativas organizacionais.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
@@ -1023,28 +1055,28 @@
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">Existe equilíbrio entre transparência e microgerenciamento?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">A transparência é essencial para o acompanhamento do projeto, porém deve ocorrer sem comprometer a autonomia da equipa. Avalie se práticas de monitorização estão sendo utilizadas como suporte à gestão ou como mecanismo de controle excessivo. O acompanhamento deve promover visibilidade e confiança, evitando intervenções constantes que prejudiquem a concentração e o senso de responsabilidade dos profissionais.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">A transparência é essencial para o acompanhamento do projeto, porém deve ocorrer sem comprometer a autonomia da equipe. Avalie se práticas de monitorização estão sendo utilizadas como suporte à gestão ou como mecanismo de controle excessivo. O acompanhamento deve promover visibilidade e confiança, evitando intervenções constantes que prejudiquem a concentração e o senso de responsabilidade dos profissionais.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 block">A equipa possui autonomia para organizar o seu trabalho?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Observe se os membros da equipa possuem liberdade para definir a melhor forma de execução das atividades, distribuir tarefas e propor melhorias no processo. A autonomia favorece engajamento, senso de pertencimento e maior responsabilidade sobre os resultados. Quando houver excesso de centralização, a liderança deve atuar como facilitadora e não como agente de controle.</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">A equipe possui autonomia para organizar o seu trabalho?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Observe se os membros da equipe possuem liberdade para definir a melhor forma de execução das atividades, distribuir tarefas e propor melhorias no processo. A autonomia favorece engajamento, senso de pertencimento e maior responsabilidade sobre os resultados. Quando houver excesso de centralização, a liderança deve atuar como facilitadora e não como agente de controle.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">Há sinais de sobrecarga emocional ou cansaço recorrente?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Identifique indícios de estresse, ansiedade, fadiga mental, irritabilidade ou queda de desempenho que possam estar relacionados ao excesso de demandas ou à má condução das práticas ágeis. A observação desses sinais deve ser tratada com seriedade, pois impacta diretamente a saúde da equipa e a sustentabilidade do projeto. Nesses casos, recomenda-se reavaliar prazos, volume de trabalho e canais de comunicação.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Identifique indícios de estresse, ansiedade, fadiga mental, irritabilidade ou queda de desempenho que possam estar relacionados ao excesso de demandas ou à má condução das práticas ágeis. A observação desses sinais deve ser tratada com seriedade, pois impacta diretamente a saúde da equipe e a sustentabilidade do projeto. Nesses casos, recomenda-se reavaliar prazos, volume de trabalho e canais de comunicação.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">A liderança demonstra compreensão técnica e empatia?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Verifique se gestores, product owners e líderes técnicos conseguem equilibrar direcionamento estratégico com sensibilidade às necessidades humanas da equipa. A liderança deve oferecer suporte, promover segurança psicológica e incentivar um ambiente de confiança. A ausência dessa postura pode gerar distanciamento, baixa motivação e dificuldades na resolução de conflitos.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Verifique se gestores, product owners e líderes técnicos conseguem equilibrar direcionamento estratégico com sensibilidade às necessidades humanas da equipe. A liderança deve oferecer suporte, promover segurança psicológica e incentivar um ambiente de confiança. A ausência dessa postura pode gerar distanciamento, baixa motivação e dificuldades na resolução de conflitos.</span>
                             </div>
                         </label>
                     </div>
@@ -1064,7 +1096,7 @@
                 <p class="max-w-4xl mx-auto text-slate-500 dark:text-slate-400 text-center">
                     Solução corporativa orientada à integração entre PMBOK, metodologias ágeis,
                     análise de dados e Inteligência Artificial para monitorização do fator humano
-                    em equipas de desenvolvimento de software.
+                    em equipes de desenvolvimento de software.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
@@ -1074,7 +1106,7 @@
                     <span>•</span>
                     <span>Fator Humano</span>
                     <span>•</span>
-                    <span>Analytics</span>
+                    <span>Análise</span>
                     <span>•</span>
                     <span>IA</span>
                 </div>

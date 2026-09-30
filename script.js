@@ -35,7 +35,7 @@ const USERS = [
 ];
 
 const MOCK_TEAMS_DATA = {
-  "Squad Alpha": {
+  "Equipe Alpha": {
     riskLevel: "high",
     factors: {
       "Cansaço Mental": 4.5,
@@ -51,7 +51,7 @@ const MOCK_TEAMS_DATA = {
       { date: "Sem 3", estresse: 4.2, produtividade: 2.1 },
     ],
   },
-  "Squad Beta": {
+  "Equipe Beta": {
     riskLevel: "low",
     factors: {
       "Cansaço Mental": 2.0,
@@ -67,7 +67,7 @@ const MOCK_TEAMS_DATA = {
       { date: "Sem 3", estresse: 2.1, produtividade: 4.5 },
     ],
   },
-  "Squad Gamma": {
+  "Equipe Gamma": {
     riskLevel: "medium",
     factors: {
       "Cansaço Mental": 3.2,
@@ -110,7 +110,7 @@ const CATEGORIES = {
     ],
   },
   work: {
-    label: "Trabalho & Entregas",
+    label: "Trabalho e Entregas",
     icon: "ph-briefcase",
     color: "text-emerald-500",
     fields: [
@@ -121,7 +121,7 @@ const CATEGORIES = {
     ],
   },
   general: {
-    label: "Visão & Sentimento",
+    label: "Visão e Sentimento",
     icon: "ph-target",
     color: "text-indigo-500",
     fields: [
@@ -225,9 +225,9 @@ function toggleRegisterMode() {
     passwordField.classList.add("hidden");
     regPasswordFields.classList.remove("hidden");
     authTitle.innerText = "Cadastrar Organização";
-    authSubtitle.innerText = "Registe a sua empresa como gestor principal";
+    authSubtitle.innerText = "Registre a sua empresa como gestor principal";
     authIcon.className = "ph ph-buildings text-3xl";
-    btnText.innerText = "Efetuar Registo e Ir para Login";
+    btnText.innerText = "Efetuar Registro e Ir para Login";
     toggleBtn.innerText = "Já tem conta? Clique aqui para entrar";
   } else {
     regFields.classList.add("hidden");
@@ -236,10 +236,10 @@ function toggleRegisterMode() {
     regPasswordFields.classList.add("hidden");
     authTitle.innerText = "Acesso Corporativo";
     authSubtitle.innerText =
-      "Selecione o seu perfil de acesso ou registe a empresa";
+      "Selecione o seu perfil de acesso ou registre a empresa";
     authIcon.className = "ph ph-buildings text-2xl";
     btnText.innerText = "Entrar no Sistema";
-    toggleBtn.innerText = "É gestor e quer cadastrar a empresa? Clique aqui";
+    toggleBtn.innerText = "Você é gestor e quer cadastrar uma empresa? Clique aqui";
   }
 }
 
@@ -333,7 +333,7 @@ function handleLogin() {
 
   if (!matchedUser) {
     alert(
-      "Credenciais inválidas. Verifique o e-mail e a senha, ou utilize 'gestor@agilewell.com' / 'dev@agilewell.com' com senha '123456'.",
+      "Credenciais inválidas. Verifique o e-mail e a senha.",
     );
     return;
   }
@@ -697,7 +697,7 @@ function toggleProfile() {
 // Síntese do Guia Prático (PMBOK + Ágil) usada para enriquecer a análise da IA
 const GUIDE_CONTEXT = [
   "Planeamento adaptativo com limites claros de escopo e recursos.",
-  "Gestão de prazos orientada à capacidade real e ritmo sustentável da equipa.",
+  "Gestão de prazos orientada à capacidade real e ritmo sustentável da equipe.",
   "Rituais ágeis com propósito (daily, planning, review, retrospectiva).",
   "Comunicação estruturada, transparente e com limites de disponibilidade.",
   "Liderança técnica e empática, promovendo autonomia e segurança psicológica.",
@@ -746,15 +746,15 @@ function generateDevFactors(seed) {
 
 // Desenvolvedores para os squads de demonstração (mock)
 const MOCK_DEV_NAMES = {
-  "Squad Alpha": [
+  "Equipe Alpha": [
     "Ana Souza",
     "Bruno Lima",
     "Carla Dias",
     "Diego Rocha",
     "Elisa Mota",
   ],
-  "Squad Beta": ["Fábio Nunes", "Gabriela Reis", "Hugo Pires"],
-  "Squad Gamma": ["Iara Melo", "João Alves", "Karina Buscel", "Luiz Farias"],
+  "Equipe Beta": ["Fábio Nunes", "Gabriela Reis", "Hugo Pires"],
+  "Equipe Gamma": ["Iara Melo", "João Alves", "Karina Buscel", "Luiz Farias"],
 };
 
 function getTeamDevelopers(teamName) {
@@ -773,7 +773,7 @@ function getTeamDevelopers(teamName) {
 function getTeamData(teamName) {
   if (MOCK_TEAMS_DATA[teamName]) return MOCK_TEAMS_DATA[teamName];
   const squad = getRegisteredSquads().find((s) => s.name === teamName);
-  if (!squad) return MOCK_TEAMS_DATA["Squad Alpha"];
+  if (!squad) return MOCK_TEAMS_DATA["Equipe Alpha"];
   const devs = squad.developers || [];
   const keys = [
     "Cansaço Mental",
@@ -811,7 +811,7 @@ let selectedDev = null;
 function initManagerDashboard() {
   renderSquadList();
   renderTeamSelector();
-  selectTeam("Squad Alpha");
+  selectTeam("Equipe Alpha");
 }
 
 function renderTeamSelector() {
@@ -982,7 +982,7 @@ function renderManagerSolutions(isLoading = false) {
 async function generateManagerInsights() {
   renderManagerSolutions(true);
   const teamData = getTeamData(activeManagerTeam);
-  const prompt = `Atue como um Agile Coach Sénior e Psicólogo Organizacional. Analise os seguintes dados da equipa "${activeManagerTeam}": ${JSON.stringify(teamData.factors)}. Contexto: Escala 1 a 5. Utilize como base o Guia Prático PMBOK + Ágil: ${GUIDE_CONTEXT}. Gere 4 recomendações táticas integrando o guia ao diagnóstico. RESPONDA APENAS UM JSON VÁLIDO: [{ "title": "...", "action": "...", "impact": "...", "priority": "Alta/Média/Baixa" }]`;
+  const prompt = `Atue como um Agile Coach Sénior e Psicólogo Organizacional. Analise os seguintes dados da equipe "${activeManagerTeam}": ${JSON.stringify(teamData.factors)}. Contexto: Escala 1 a 5. Utilize como base o Guia Prático PMBOK + Ágil: ${GUIDE_CONTEXT}. Gere 4 recomendações táticas integrando o guia ao diagnóstico. RESPONDA APENAS UM JSON VÁLIDO: [{ "title": "...", "action": "...", "impact": "...", "priority": "Alta/Média/Baixa" }]`;
   const result = await callGemini(prompt);
 
   if (result) {
@@ -1028,11 +1028,11 @@ function registerSquad() {
   const email = (emailInput?.value || "").trim();
 
   if (!name) {
-    alert("Informe o nome do Squad.");
+    alert("Informe o nome da Equipe.");
     return;
   }
   if (!email) {
-    alert("Informe o e-mail corporativo do Squad para enviar os convites.");
+    alert("Informe o e-mail corporativo do desenvolvedor para enviar o convite.");
     return;
   }
   if (size < 1 || size > 20) {
@@ -1042,7 +1042,7 @@ function registerSquad() {
 
   const squads = getRegisteredSquads();
   if (squads.some((s) => s.name.toLowerCase() === name.toLowerCase())) {
-    alert("Já existe um squad com esse nome.");
+    alert("Já existe um equipe com esse nome.");
     return;
   }
 
@@ -1066,12 +1066,12 @@ function registerSquad() {
   // Regista a notificação local
   addNotification(
     "Squad " + name,
-    `Squad criado com ${size} devs. Convites enviados para: ${invites.join(", ")}.`,
+    `Equipe criado com ${size} devs. Convite enviado para: ${invites.join(", ")}.`,
   );
 
   alert(
-    `Squad "${name}" cadastrado com sucesso!\n\n` +
-      `${size} convites foram "enviados" para os e-mails corporativos:\n` +
+    `Equipe "${name}" cadastrado com sucesso!\n\n` +
+      `${size} convite foi "enviado" para o e-mail corporativo:\n` +
       invites.join("\n"),
   );
 
@@ -1087,7 +1087,7 @@ function renderSquadList() {
   if (!container) return;
   const squads = getRegisteredSquads();
   if (squads.length === 0) {
-    container.innerHTML = `<p class="text-sm text-slate-400">Nenhum squad cadastrado ainda. Use o formulário acima.</p>`;
+    container.innerHTML = `<p class="text-sm text-slate-400">Nenhum equipe cadastrado ainda. Use o formulário acima.</p>`;
     return;
   }
   container.innerHTML = squads
@@ -1118,7 +1118,7 @@ function removeSquad(name) {
   const squads = getRegisteredSquads().filter((s) => s.name !== name);
   saveRegisteredSquads(squads);
   if (activeManagerTeam === name) {
-    activeManagerTeam = "Squad Alpha";
+    activeManagerTeam = "Equipe Alpha";
     selectedDev = null;
   }
   renderSquadList();
@@ -1133,7 +1133,7 @@ function renderDevSelector() {
   if (!container) return;
   const devs = getTeamDevelopers(activeManagerTeam);
   if (!devs.length) {
-    container.innerHTML = `<p class="text-sm text-slate-400">Nenhum desenvolvedor nesta equipa.</p>`;
+    container.innerHTML = `<p class="text-sm text-slate-400">Nenhum desenvolvedor nesta equipe.</p>`;
     return;
   }
   container.innerHTML = devs
@@ -1248,10 +1248,10 @@ async function orientTeamAI() {
   const container = document.getElementById("devDetailBody");
   if (!container) return;
   container.innerHTML = `<div class="h-40 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-    <i class="ph ph-robot text-4xl text-indigo-300 mb-4 animate-bounce"></i><p class="text-indigo-500 font-medium">A gerar orientação para a equipa...</p>
+    <i class="ph ph-robot text-4xl text-indigo-300 mb-4 animate-bounce"></i><p class="text-indigo-500 font-medium">A gerar orientação para a equipe...</p>
   </div>`;
   const teamData = getTeamData(activeManagerTeam);
-  const prompt = `Atue como um Agile Coach Sénior. Com base no Guia Prático PMBOK + Ágil: ${GUIDE_CONTEXT}, oriente a equipa "${activeManagerTeam}" cujos fatores são ${JSON.stringify(teamData.factors)}. Dê 3 orientações práticas de 1 frase cada, em Português, separadas por quebra de linha, começando cada uma com "- ".`;
+  const prompt = `Atue como um Agile Coach Sénior. Com base no Guia Prático PMBOK + Ágil: ${GUIDE_CONTEXT}, oriente a equipe "${activeManagerTeam}" cujos fatores são ${JSON.stringify(teamData.factors)}. Dê 3 orientações práticas de 1 frase cada, em Português, separadas por quebra de linha, começando cada uma com "- ".`;
   const text = await callGemini(prompt);
   const content = text
     ? `<div class="fade-in"><p class="text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 uppercase">Orientação para a equipa</p><p class="text-sm text-slate-700 dark:text-slate-200 whitespace-pre-line leading-relaxed">${text.replace(/</g, "&lt;")}</p></div>`

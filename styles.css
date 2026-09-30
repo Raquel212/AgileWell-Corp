@@ -80,3 +80,11 @@ body { font-family: 'Inter', sans-serif; }
     .pdf-content #pdfContent input[type="checkbox"] + div > span:last-child {
         color: #475569 !important;            /* slate-600 */
     }
+
+    /* Texto com gradiente (usado em títulos da home) */
+    .linear-gradient-text {
+        background-image: linear-gradient(to right, #4f46e5, #d946ef); /* indigo-600 -> fuchsia-600 */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
