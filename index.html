@@ -10,7 +10,10 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
 
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center relative">
+        <div class="max-w-7xl mx-auto px-4 py-3 relative">
+            
+            <!-- Linha principal: logo (esquerda) + ações (direita) -->
+            <div class="flex justify-between items-center">
             
             <!-- Logo -->
             <div class="flex items-center gap-2 cursor-pointer z-10" onclick="navigate('home')">
@@ -19,17 +22,6 @@
                 </div>
                 <h1 class="text-lg font-bold tracking-tight hidden sm:block">AgileWell <span class="text-indigo-600 dark:text-indigo-400 font-light">Corp</span></h1>
             </div>
-
-            <!-- Menu Principal (Aparece Logado) -->
-            <nav id="topNavigation" class="hidden absolute left-1/2 -translate-x-1/2 items-center gap-6 bg-slate-100 dark:bg-slate-800 px-5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all duration-300">
-                <button onclick="navigate(currentRole === 'manager' ? 'manager' : 'dev')" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 hover:text-indigo-700 transition-colors">
-                    <i class="ph ph-squares-four text-lg"></i> Visão Geral
-                </button>
-                <div class="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
-                <button onclick="navigate('guide')" class="text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                    <i class="ph ph-book-open text-lg"></i> Guia Prático
-                </button>
-            </nav>
 
             <!-- Ações à Direita -->
             <div class="flex items-center gap-2 sm:gap-3 z-10">
@@ -67,7 +59,7 @@
 
     <div
         id="managerNotifications"
-        class="hidden absolute top-12 right-[-60px] sm:right-0 w-[320px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
+        class="hidden fixed inset-x-3 top-32 sm:absolute sm:inset-x-auto sm:right-0 sm:top-12 w-auto sm:w-[320px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
     >
 
         <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
@@ -146,7 +138,7 @@
 
                         <div
                             id="devNotifications"
-                            class="hidden absolute top-12 right-[-60px] sm:right-0 w-[320px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
+                            class="hidden fixed inset-x-3 top-32 sm:absolute sm:inset-x-auto sm:right-0 sm:top-12 w-auto sm:w-[320px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
                         >
 
                             <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
@@ -259,6 +251,18 @@
                     </div>
                 </div>
             </div>
+            </div>
+
+            <!-- Menu Principal (aparece logado) -->
+            <nav id="topNavigation" class="hidden md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 mt-3 md:mt-0 justify-center items-center gap-4 md:gap-6 bg-slate-100 dark:bg-slate-800 px-4 md:px-5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all duration-300">
+                <button onclick="navigate(currentRole === 'manager' ? 'manager' : 'dev')" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 hover:text-indigo-700 transition-colors">
+                    <i class="ph ph-squares-four text-lg"></i> Visão Geral
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
+                <button onclick="navigate('guide')" class="text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <i class="ph ph-book-open text-lg"></i> Guia Prático
+                </button>
+            </nav>
         </div>
     </header>
 
@@ -933,39 +937,39 @@
 
             <div id="pdfContent" class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-8 space-y-8">
                 <div class="prose dark:prose-invert max-w-none">
-                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2">4. Diretrizes Preliminares para Integração PMBOK + Ágil</h1>
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2">1. Diretrizes Preliminares para Integração PMBOK + Ágil</h1>
                     <p class="text-justify mt-4 leading-relaxed">
                         Este capítulo apresenta as diretrizes preliminares propostas para a integração entre o PMBOK e abordagens ágeis, com foco na promoção do bem-estar das equipas e na melhoria do desempenho dos projetos de software.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.1 Planeamento Adaptativo com Limites Claros</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.1 Planeamento Adaptativo com Limites Claros</h2>
                     <p class="text-justify mt-2 leading-relaxed">
                         O planeamento deve equilibrar flexibilidade e definição clara de objetivos, garantindo que a equipa saiba quais entregas são prioritárias e quais são os limites de escopo e recursos. A ausência de limites claros no planeamento é uma das principais causas de retrabalho e sobrecarga.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.2 Gestão de Prazos Orientada à Capacidade da Equipa</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.2 Gestão de Prazos Orientada à Capacidade da Equipa</h2>
                     <p class="text-justify mt-2 leading-relaxed">
                         Os prazos devem ser definidos considerando a capacidade real da equipa e o ritmo sustentável de trabalho. Prazos excessivamente rígidos podem aumentar o estresse e reduzir a produtividade.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.3 Rituais Ágeis com Propósito</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.3 Rituais Ágeis com Propósito</h2>
                     <p class="text-justify mt-2 leading-relaxed">
                         As cerimónias ágeis (daily meetings, planning, review e retrospectivas) devem ter objetivos claros e duração adequada. Reuniões sem propósito ou excessivamente longas podem gerar fadiga.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.4 Comunicação Estruturada e Saudável</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.4 Comunicação Estruturada e Saudável</h2>
                     <p class="text-justify mt-2 leading-relaxed">
                         A comunicação deve ser transparente, mas respeitando limites claros de disponibilidade e evitando sobrecarga de informações. Promove segurança psicológica e confiança entre os membros.
                     </p>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">4.5 Liderança Técnica e Empática</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">1.5 Liderança Técnica e Empática</h2>
                     <p class="text-justify mt-2 leading-relaxed">
                         A liderança deve atuar como facilitadora, promovendo autonomia, segurança psicológica e apoio técnico. Líderes empáticos ajudam a reduzir conflitos e identificar sobrecarga.
                     </p>
 
-                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">5. Guia Prático</h1>
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">2. Guia Prático</h1>
                     
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.1 Etapa 1 — Diagnóstico do Contexto</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">2.1 Etapa 1 — Diagnóstico do Contexto</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
                         <li>Identificação do público-alvo e stakeholders.</li>
                         <li>Mapeamento da estrutura organizacional.</li>
@@ -974,7 +978,7 @@
                         <li>Análise de riscos e desafios.</li>
                     </ul>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.2 Etapa 2 — Planeamento Integrado</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">2.2 Etapa 2 — Planeamento Integrado</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
                         <li>Definir objetivos do projeto.</li>
                         <li>Estruturar entregas incrementais.</li>
@@ -983,7 +987,7 @@
                         <li>Definir métricas de desempenho.</li>
                     </ul>
 
-                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">5.3 Etapa 3 — Execução e Monitorização</h2>
+                    <h2 class="text-xl font-bold mt-6 text-slate-800 dark:text-slate-200">2.3 Etapa 3 — Execução e Monitorização</h2>
                     <ul class="list-disc pl-5 mt-2 space-y-2">
                         <li>Implementar atividades planeadas.</li>
                         <li>Realizar reuniões de alinhamento e retrospectivas.</li>
@@ -992,20 +996,55 @@
                         <li>Promover liderança facilitadora.</li>
                     </ul>
 
-                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">7. Checklist de Aplicação</h1>
+                    <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 border-b pb-2 mt-12">3. Checklist de Aplicação</h1>
                     <div class="mt-6 space-y-4">
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">O escopo e os objetivos do projeto estão claramente definidos?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Verifique se todos os stakeholders compreendem os objetivos estratégicos.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Verifique se todos os stakeholders compreendem os objetivos estratégicos, as entregas esperadas e os critérios de sucesso do projeto. A ausência de clareza nessa definição pode gerar retrabalho, conflitos de prioridade e desalinhamento entre equipa e gestão. Caso sejam identificadas inconsistências, recomenda-se revisar o planeamento inicial, redefinir prioridades e formalizar as decisões para garantir rastreabilidade e alinhamento contínuo.</span>
                             </div>
                         </label>
                         <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
                             <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
                             <div>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 block">As metas das sprints são compatíveis com a capacidade real da equipa?</span>
-                                <span class="text-sm text-slate-500 mt-1 block">Avalie se o volume de trabalho planeado considera a disponibilidade real.</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Avalie se o volume de trabalho planeado considera a disponibilidade dos profissionais, a complexidade das tarefas e o histórico de entregas anteriores. Metas excessivamente agressivas tendem a gerar pressão psicológica, queda de qualidade e desmotivação. Sempre que necessário, os prazos devem ser ajustados com base em dados concretos e não apenas em expectativas organizacionais.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">As reuniões possuem propósito claro e duração adequada?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Confirme se cerimónias como daily meetings, sprint planning, reviews e retrospectivas possuem objetivos definidos e agregam valor ao processo de trabalho. Reuniões excessivas ou sem direcionamento comprometem a produtividade e aumentam a sensação de sobrecarga. Recomenda-se eliminar encontros redundantes e manter foco naquilo que realmente contribui para a tomada de decisão e a melhoria contínua.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">Existe equilíbrio entre transparência e microgerenciamento?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">A transparência é essencial para o acompanhamento do projeto, porém deve ocorrer sem comprometer a autonomia da equipa. Avalie se práticas de monitorização estão sendo utilizadas como suporte à gestão ou como mecanismo de controle excessivo. O acompanhamento deve promover visibilidade e confiança, evitando intervenções constantes que prejudiquem a concentração e o senso de responsabilidade dos profissionais.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">A equipa possui autonomia para organizar o seu trabalho?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Observe se os membros da equipa possuem liberdade para definir a melhor forma de execução das atividades, distribuir tarefas e propor melhorias no processo. A autonomia favorece engajamento, senso de pertencimento e maior responsabilidade sobre os resultados. Quando houver excesso de centralização, a liderança deve atuar como facilitadora e não como agente de controle.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">Há sinais de sobrecarga emocional ou cansaço recorrente?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Identifique indícios de estresse, ansiedade, fadiga mental, irritabilidade ou queda de desempenho que possam estar relacionados ao excesso de demandas ou à má condução das práticas ágeis. A observação desses sinais deve ser tratada com seriedade, pois impacta diretamente a saúde da equipa e a sustentabilidade do projeto. Nesses casos, recomenda-se reavaliar prazos, volume de trabalho e canais de comunicação.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500">
+                            <div>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 block">A liderança demonstra compreensão técnica e empatia?</span>
+                                <span class="text-sm text-slate-500 mt-1 block">Verifique se gestores, product owners e líderes técnicos conseguem equilibrar direcionamento estratégico com sensibilidade às necessidades humanas da equipa. A liderança deve oferecer suporte, promover segurança psicológica e incentivar um ambiente de confiança. A ausência dessa postura pode gerar distanciamento, baixa motivação e dificuldades na resolução de conflitos.</span>
                             </div>
                         </label>
                     </div>
@@ -1073,5 +1112,5 @@
         }
     }
 </script>
-<script src="bloqueio.js"></script>
+<!-- <script src="bloqueio.js"></script> -->
 </html>

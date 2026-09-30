@@ -308,6 +308,11 @@ function handleLogin() {
 
   if (isRegisteringOrg) return;
 
+  if (!email || !pass) {
+    alert("Preencha o e-mail e a senha para entrar.");
+    return;
+  }
+
   let matchedUser = USERS.find((u) => u.email === email && u.password === pass);
 
   if (!matchedUser) {
@@ -327,14 +332,20 @@ function handleLogin() {
   }
 
   if (!matchedUser) {
-    if (!email) {
-      matchedUser = USERS.find((u) => u.role === currentRole);
-    } else {
-      alert(
-        "Credenciais inválidas. Verifique o e-mail e a senha, ou utilize 'gestor@agilewell.com' / 'dev@agilewell.com' com senha '123456'.",
-      );
-      return;
-    }
+    alert(
+      "Credenciais inválidas. Verifique o e-mail e a senha, ou utilize 'gestor@agilewell.com' / 'dev@agilewell.com' com senha '123456'.",
+    );
+    return;
+  }
+
+  // Impede login com perfil diferente da opção selecionada na tela de login
+  if (matchedUser.role !== currentRole) {
+    alert(
+      currentRole === "manager"
+        ? "Este e-mail pertence a um Colaborador. Para entrar, selecione a opção 'Colaborador' na tela de login."
+        : "Este e-mail pertence a um Gestor. Para entrar, selecione a opção 'Gestão' na tela de login."
+    );
+    return;
   }
 
   currentRole = matchedUser.role;
@@ -395,8 +406,10 @@ function logout() {
     topNav.classList.remove("flex");
   }
 
-  const notifDropdown = document.getElementById("notifDropdown");
-  if (notifDropdown) notifDropdown.classList.add("hidden");
+  const managerNotifs = document.getElementById("managerNotifications");
+  if (managerNotifs) managerNotifs.classList.add("hidden");
+  const devNotifs = document.getElementById("devNotifications");
+  if (devNotifs) devNotifs.classList.add("hidden");
   const profileDropdown = document.getElementById("profileDropdown");
   if (profileDropdown) profileDropdown.classList.add("hidden");
 
@@ -435,7 +448,10 @@ function addNotification(title, message) {
 
 
 function renderNotifications() {
-  const list = document.getElementById("notifDropdown");
+  const isManager = currentRole === "manager";
+  const list = document.getElementById(
+    isManager ? "managerNotifications" : "devNotifications"
+  );
 
   if (!list) return;
 
@@ -625,7 +641,10 @@ function toggleNotif() {
 
   renderNotifications();
 
-  const dropdown = document.getElementById("notifDropdown");
+  const isManager = currentRole === "manager";
+  const dropdown = document.getElementById(
+    isManager ? "managerNotifications" : "devNotifications"
+  );
   const profileDropdown =
     document.getElementById("profileDropdown");
 
@@ -639,6 +658,14 @@ function toggleNotif() {
   if (profileDropdown && willShow) {
     profileDropdown.classList.add("hidden");
   }
+
+  // Fecha o dropdown do outro perfil, caso esteja aberto
+  const otherDropdown = document.getElementById(
+    isManager ? "devNotifications" : "managerNotifications"
+  );
+  if (otherDropdown && willShow) {
+    otherDropdown.classList.add("hidden");
+  }
 }
 
 
@@ -647,9 +674,6 @@ function toggleProfile() {
   const dropdown =
     document.getElementById("profileDropdown");
 
-  const notifDropdown =
-    document.getElementById("notifDropdown");
-
   if (!dropdown) return;
 
   const willShow =
@@ -657,8 +681,13 @@ function toggleProfile() {
 
   dropdown.classList.toggle("hidden");
 
-  if (notifDropdown && willShow) {
-    notifDropdown.classList.add("hidden");
+  if (willShow) {
+    const managerNotifs =
+      document.getElementById("managerNotifications");
+    const devNotifs =
+      document.getElementById("devNotifications");
+    if (managerNotifs) managerNotifs.classList.add("hidden");
+    if (devNotifs) devNotifs.classList.add("hidden");
   }
 }
 
@@ -1353,6 +1382,20 @@ function submitDevForm() {
   }, 2000);
 }
 
+// Destaca visualmente os itens do checklist do Guia Prático quando marcados
+function initChecklistStyles() {
+  const container = document.getElementById("pdfContent");
+  if (!container) return;
+
+  container.addEventListener("change", (event) => {
+    const target = event.target;
+    if (target && target.matches && target.matches('input[type="checkbox"]')) {
+      const label = target.closest("label");
+      if (label) label.classList.toggle("checked", target.checked);
+    }
+  });
+}
+
 function exportToPDF() {
   const element = document.getElementById("pdfContent");
   const opt = {
@@ -1363,13 +1406,22 @@ function exportToPDF() {
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   };
   const originalClass = element.className;
+  const htmlEl = document.documentElement;
+  const wasDark = htmlEl.classList.contains("dark");
+
+  // Garante que o PDF respeite o "modo claro" (fundo branco e texto escuro),
+  // independentemente do tema ativo na tela — evita texto claro ilegível.
+  if (wasDark) htmlEl.classList.remove("dark");
+
   element.className = "pdf-content text-black bg-white";
+
   html2pdf()
     .set(opt)
     .from(element)
     .save()
     .then(() => {
       element.className = originalClass;
+      if (wasDark) htmlEl.classList.add("dark");
     });
 }
 
@@ -1399,5 +1451,6 @@ function togglePassword(inputId, button) {
 
 window.onload = () => {
   checkSystemTheme();
+  initChecklistStyles();
   navigate("home");
 };

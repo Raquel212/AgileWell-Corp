@@ -44,3 +44,39 @@ body { font-family: 'Inter', sans-serif; }
         color: black !important;
         padding: 20px;
     }
+
+    /* ===== Checklist do Guia Prático: destaque ao marcar ===== */
+    #pdfContent label {
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    #pdfContent label.checked {
+        background-color: #ecfdf5 !important;  /* emerald-50 */
+        border-color: #10b981 !important;     /* emerald-500 */
+    }
+
+    #pdfContent label.checked > div > span:first-child {
+        color: #047857 !important;            /* emerald-700 (título) */
+    }
+
+    #pdfContent label.checked > div > span:last-child {
+        color: #065f46 !important;            /* emerald-800 (descrição) */
+    }
+
+    .dark #pdfContent label.checked {
+        background-color: rgba(6, 95, 70, 0.35) !important; /* emerald-900/35 */
+        border-color: #34d399 !important;     /* emerald-400 */
+    }
+
+    .dark #pdfContent label.checked > div > span:first-child {
+        color: #6ee7b7 !important;            /* emerald-300 */
+    }
+
+    .dark #pdfContent label.checked > div > span:last-child {
+        color: #a7f3d0 !important;            /* emerald-200 */
+    }
+
+    /* Mais contraste das descrições no PDF exportado */
+    .pdf-content #pdfContent input[type="checkbox"] + div > span:last-child {
+        color: #475569 !important;            /* slate-600 */
+    }
