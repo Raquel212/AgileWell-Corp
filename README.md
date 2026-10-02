@@ -39,8 +39,38 @@ Predictive analytics to identify psychosocial risks and early signs of burnout.
 ### 📖 Integrated Practical Guide
 A practical framework that integrates PMBOK and Agile practices with a focus on human well-being.
 
-### 🤖 Agile Coach AI
+### 🤖 AI Coach 
 AI-powered assistant that generates personalized action plans and recommendations for teams and leaders.
+
+---
+
+## 🔐 Demo Access
+
+Use the credentials below to access the platform and explore the different user roles.
+
+<table align="center">
+  <tr>
+    <th>👩‍💼 Manager</th>
+    <th>👨‍💻 Developer</th>
+  </tr>
+  <tr>
+    <td >
+      <strong>Name:</strong> Ana Gestora<br>
+      <strong>Email:</strong> <code>gestor@agilewell.com</code><br>
+      <strong>Password:</strong> <code>123456</code><br>
+      <strong>Role:</strong> <code>Manager</code>
+    </td>
+    <td >
+      <strong>Name:</strong> Carlos Dev<br>
+      <strong>Email:</strong> <code>dev@agilewell.com</code><br>
+      <strong>Password:</strong> <code>123456</code><br>
+      <strong>Role:</strong> <code>Dev</code>
+    </td>
+  </tr>
+</table>
+
+> ⚠️ **Demo credentials:** These accounts are provided exclusively for demonstration and testing purposes.
+
 
 ---
 
